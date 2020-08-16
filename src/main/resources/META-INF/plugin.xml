@@ -1,0 +1,68 @@
+<idea-plugin>
+    <id>com.alibaba.compileflow.designer</id>
+    <name>compileflow idea设计器</name>
+    <version>1.0.0</version>
+    <vendor email="wuxiang@taobao.com" url="http://www.taobao.com">阿里巴巴</vendor>
+
+    <description><![CDATA[
+      目前compileflow idea插件全面支持xml格式化编辑，java源码展现，简单图形编辑操作<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      重构<br>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <application-components>
+        <component>
+            <implementation-class>com.alibaba.compileflow.idea.plugin.component.AssociateFileTypeComponent
+            </implementation-class>
+        </component>
+    </application-components>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <fileEditorProvider implementation="com.alibaba.compileflow.idea.plugin.provider.JavaSourceFileEditorProvider"/>
+        <fileEditorProvider implementation="com.alibaba.compileflow.idea.plugin.provider.FlowChartFileEditorProvider"/>
+
+    </extensions>
+
+    <project-components>
+        <component>
+            <implementation-class>com.alibaba.compileflow.idea.plugin.component.ToolWindowComponent
+            </implementation-class>
+            <headless-implementation-class/>
+        </component>
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="CompileflowFile"
+                class="com.alibaba.compileflow.idea.plugin.action.AddComponentAction"
+                text="Create New Bpm File"
+                description="Create New Bpm File">
+            <add-to-group group-id="NewGroup" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="AddToFavorites"/>
+        </action>
+
+        <action id="CompileflowFile_Test"
+                class="com.alibaba.compileflow.idea.plugin.action.CreateTestAction"
+                text="Create New Bpm JUnit Test"
+                description="Create New Bpm JUnit Test">
+            <add-to-group group-id="NewGroup" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="CompileflowFile"/>
+        </action>
+    </actions>
+
+    <depends>com.intellij.modules.java</depends>
+
+</idea-plugin>

@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+
+# IntelliJ
+out/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle/
+build/
+classes/
+
+#gradle.properties
+*.icls
+src/test/resources/
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+
+
+# Package Files #
+*.jar
+!/libs/miglayout-swing-5.3-SNAPSHOT.jar
+!/libs/miglayout-core-5.3-SNAPSHOT.jar
+!/libs/mxgraph-all.jar
+!/libs/rsyntaxtextarea-3.0.0-SNAPSHOT.jar
+!/libs/tbbpm-jar-with-dependencies.jar
+!/libs/compileflow-0.9.1-SNAPSHOT-jar-with-dependencies.jar
+!/libs/logback-classic-1.1.8.jar
+!/libs/logback-core-1.1.8.jar
+*.war
+*.nar
+*.ear
+*.tar.gz
+*.rar
