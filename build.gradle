@@ -44,7 +44,7 @@ allprojects {
         compile name: 'miglayout-swing-5.3-SNAPSHOT'
         compile name: 'mxgraph-all'
         compile name: 'rsyntaxtextarea-3.0.0-SNAPSHOT'
-        compile name: 'compileflow-0.9.1-SNAPSHOT-jar-with-dependencies'
+        compile name: 'compileflow-0.9.1-jar-with-dependencies'
         compile name: 'logback-core-1.1.8'
         compile name: 'logback-classic-1.1.8'
         testCompile group: 'junit', name: 'junit', version: '4.12'
