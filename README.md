@@ -89,6 +89,7 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 3. [miglayout学习资料](http://www.miglayout.com/whitepaper.html)
 4. [java SWING学习资料](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
 5. [SDK build number](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html)
+6. 入门demo：https://github.com/xuan698400/compileflow_demo
 
 ### 版本升级备注
 
