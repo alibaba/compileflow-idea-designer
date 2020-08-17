@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.0'
+version '1.0.1'
 
 sourceCompatibility = 1.8
 
@@ -54,13 +54,17 @@ allprojects {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2018.2'
-    //plugins = ['java']
+    version '2020.1'
+    plugins = ['java']
 }
 patchPluginXml {
     changeNotes """
       <em>1.0.0 首发版本</em><br>
       1. 首发版本 <br>
+      
+      <em>1.0.1 优化功能</em><br>
+      1. 画图模式和编辑模式友好提示 <br>
+      2. 支持画布放大缩小 <br>
       
       """
 

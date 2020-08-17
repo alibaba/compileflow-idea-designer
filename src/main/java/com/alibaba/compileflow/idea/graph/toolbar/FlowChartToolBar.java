@@ -18,6 +18,8 @@ package com.alibaba.compileflow.idea.graph.toolbar;
 
 import com.alibaba.compileflow.idea.graph.toolbar.action.DeleteCellAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.HelpAction;
+import com.alibaba.compileflow.idea.graph.toolbar.action.MoreBigAction;
+import com.alibaba.compileflow.idea.graph.toolbar.action.MoreSmallAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.PngEncodeAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.SwitchModelAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.VersionAction;
@@ -57,6 +59,11 @@ public class FlowChartToolBar extends JToolBar {
             "/com/alibaba/compileflow/idea/graph/images/toolbar/delete.png", editor));
         add(bind("Png", new PngEncodeAction(editor.getGraph(), editor.getGraphComponent(), editor.getFile()),
             "/com/alibaba/compileflow/idea/graph/images/toolbar/png.png", editor));
+
+        add(bind("MoreBig", new MoreBigAction(editor.getGraphComponent()),
+            "/com/alibaba/compileflow/idea/graph/images/toolbar/more_big.png", editor));
+        add(bind("MoreSmall", new MoreSmallAction(editor.getGraphComponent()),
+            "/com/alibaba/compileflow/idea/graph/images/toolbar/more_small.png", editor));
         addSeparator();
 
         SwitchModelAction switchModelAction = new SwitchModelAction();
