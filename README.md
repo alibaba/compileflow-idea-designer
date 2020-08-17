@@ -90,6 +90,8 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 4. [java SWING学习资料](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
 5. [SDK build number](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html)
 6. 入门demo：https://github.com/xuan698400/compileflow_demo
+7. 我们能从InteliJ IDEA中学到什么？ https://developer.aliyun.com/article/696827
+8. 编程10年感悟：https://www.infoq.cn/article/YD-tGFJPdGMVluYIkcc0 
 
 ### 版本升级备注
 
@@ -100,5 +102,5 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
 # 欢迎联系我们
 
-1. 请钉钉联系 @徐工 @余苏 @无相 @梵度
+1. 请钉钉联系 @徐工 @余苏 @梵度 @哲良  @无相
 2. 问题反馈邮箱：xuan.xa@alibaba-inc.com
