@@ -41,8 +41,8 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
 ### ZIP包安装
 
-1. 下载最新包到本地，下载地址:[compileflow-idea-designer-1.0.0.zip](doc/designer/compileflow-idea-designer-1.0.0.zip)
-如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer-1.0.0.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.0.for.2020.up.zip)
+1. 下载最新包到本地，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.1.zip)
+如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.1.for.2020.up.zip)
 2. 使用本地安装的方式安装，注意安装整个zip不用手动解压  Preferences > Plugins > Install plugin from disk
   ![image](doc/image/install_1.png)
   ![image](doc/image/install_2.png)
@@ -78,7 +78,10 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
 # Changelog
 
-1. 首发版本1.0.0（2020.08.16）by xuan
+* 首发版本：1.0.0（2020.08.16）by xuan
+* 优化功能：1.0.1（2020.08.17）by xuan
+    * 友好提示绘图模式和编辑模式状态下，如何有效设置节点属性
+    * 新增画布放大缩小功能
 
 # 附录
 
@@ -94,7 +97,7 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 ### 版本升级备注
 
 1. build.gradle 修改version和changeNotes
-2. plugin.xml 修改version和name
+2. plugin.xml 修改version
 3. README.md 修改记录Changelog
 4. CompileFlow.java 修改version
 

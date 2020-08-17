@@ -16,6 +16,7 @@
  */
 package com.alibaba.compileflow.idea.graph.toolbar.action;
 
+import com.alibaba.compileflow.idea.graph.util.DialogUtil;
 import com.alibaba.compileflow.idea.graph.util.ImageIconUtil;
 import com.alibaba.compileflow.idea.graph.util.SwitchModel;
 
@@ -39,6 +40,14 @@ public class SwitchModelAction extends AbstractAction {
         switchModel.setDraw(!switchModel.isDraw());
         btn.setToolTipText(switchModel.getToolTipText());
         btn.setIcon(ImageIconUtil.buildToolBarIcon(switchModel.getIconStr()));
+
+        String tips;
+        if (switchModel.isDraw()) {
+            tips = "Open the drawing mode and double-click the node to set the properties";
+        } else {
+            tips = "Open edit mode and click node to set properties";
+        }
+        DialogUtil.alert(tips);
     }
 
     public void setBtn(JButton btn) {
