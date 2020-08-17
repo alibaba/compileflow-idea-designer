@@ -1,6 +1,10 @@
-compileflow-idea-designer是一款Idea插件。能够让你轻松完成compileflow引擎的流程的编码设计和属性编辑。
+# 是什么？
+* compileflow-idea-designer是一款Idea插件。能够让你轻松完成compileflow引擎的流程的编码设计和属性编辑。
 
-compileflow引擎开源地址：https://github.com/alibaba/compileflow
+* compileflow引擎开源地址：https://github.com/alibaba/compileflow
+
+* 最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.1.zip)
+如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip]
 
 # 简介
 
@@ -41,8 +45,7 @@ compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
 ### ZIP包安装
 
-1. 下载最新包到本地，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.1.zip)
-如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.1.for.2020.up.zip)
+1. 下载最新包到本地，下载链接，请滚动到页面头部
 2. 使用本地安装的方式安装，注意安装整个zip不用手动解压  Preferences > Plugins > Install plugin from disk
   ![image](doc/image/install_1.png)
   ![image](doc/image/install_2.png)
