@@ -17,7 +17,9 @@
 package com.alibaba.compileflow.idea.graph.codec.impl.tbbpm;
 
 import java.io.OutputStream;
+import java.util.Comparator;
 
+import com.alibaba.compileflow.engine.definition.common.TransitionSupport;
 import com.alibaba.compileflow.engine.definition.tbbpm.TbbpmModel;
 import com.alibaba.compileflow.engine.process.preruntime.converter.impl.TbbpmModelConverter;
 import com.alibaba.compileflow.engine.process.preruntime.converter.impl.parser.model.ParseConfig;
