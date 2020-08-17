@@ -54,8 +54,8 @@ allprojects {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.1'
-    plugins = ['java']
+    version '2018.2'
+    //plugins = ['java']
 }
 patchPluginXml {
     changeNotes """
