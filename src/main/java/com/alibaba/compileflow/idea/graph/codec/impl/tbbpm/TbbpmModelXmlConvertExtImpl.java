@@ -17,9 +17,7 @@
 package com.alibaba.compileflow.idea.graph.codec.impl.tbbpm;
 
 import java.io.OutputStream;
-import java.util.Comparator;
 
-import com.alibaba.compileflow.engine.definition.common.TransitionSupport;
 import com.alibaba.compileflow.engine.definition.tbbpm.TbbpmModel;
 import com.alibaba.compileflow.engine.process.preruntime.converter.impl.TbbpmModelConverter;
 import com.alibaba.compileflow.engine.process.preruntime.converter.impl.parser.model.ParseConfig;
@@ -40,23 +38,31 @@ public class TbbpmModelXmlConvertExtImpl implements ModelXmlConvertExt {
 
     @Override
     public String toXml(BpmModel bpmModel) {
+
         try {
+
             TbbpmModel tbbpmModel = BpmConvert.toTbbpmModel(bpmModel);
             OutputStream outputStream = TbbpmModelConverter.getInstance().convertToStream(tbbpmModel);
-            return outputStream.toString();
+            if (outputStream != null) {
+                return outputStream.toString();
+            }
+
         } catch (Exception e) {
             log.error("BpmModel to xml exception.", e);
         }
+
         return null;
     }
 
     @Override
     public BpmModel toModel(String xml) {
+
         StringFlowStreamSource stringFlowStreamSource = new StringFlowStreamSource(xml);
 
         ParseConfig parseConfig = new ParseConfig();
         parseConfig.setValidateSchema(false);
         TbbpmModel tbbpmModel = TbbpmStreamParser.getInstance().parse(stringFlowStreamSource, parseConfig);
+
         return BpmConvert.toModel(tbbpmModel);
     }
 
