@@ -134,6 +134,32 @@ public class FileUtil {
         return EMPTY;
     }
 
+    public static String readToString(InputStream inputStream) {
+        if (null == inputStream) {
+            return EMPTY;
+        }
+
+        InputStreamReader isr = null;
+        try {
+            isr = new InputStreamReader(inputStream, CHARSET);
+
+            int n;
+            StringBuilder builder = new StringBuilder();
+            char[] buffer = new char[DEFAULT_BUFFER_SIZE];
+            while (EOF != (n = isr.read(buffer))) {
+                builder.append(buffer, 0, n);
+            }
+
+            return builder.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeQuietly(inputStream);
+            closeQuietly(isr);
+        }
+        return EMPTY;
+    }
+
     /**
      * Write string to file using utf-8
      *

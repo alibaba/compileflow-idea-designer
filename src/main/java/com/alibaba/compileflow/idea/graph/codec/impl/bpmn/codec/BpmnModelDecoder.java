@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.compileflow.idea.graph.codec.impl.bpmn.xml.Node;
-import com.alibaba.compileflow.idea.graph.codec.impl.bpmn.xml.XmlUtil;
+import com.alibaba.compileflow.idea.graph.util.xml.Node;
+import com.alibaba.compileflow.idea.graph.util.xml.XmlUtil;
 import com.alibaba.compileflow.idea.graph.model.BpmnModel;
 import com.alibaba.compileflow.idea.graph.model.TransitionModel;
 import com.alibaba.compileflow.idea.graph.model.VarModel;

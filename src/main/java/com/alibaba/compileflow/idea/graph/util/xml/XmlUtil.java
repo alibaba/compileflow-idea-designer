@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alibaba.compileflow.idea.graph.codec.impl.bpmn.xml;
+package com.alibaba.compileflow.idea.graph.util.xml;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

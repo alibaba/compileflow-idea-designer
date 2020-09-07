@@ -31,13 +31,14 @@ import com.alibaba.compileflow.idea.graph.model.StartNodeModel;
 import com.alibaba.compileflow.idea.graph.model.SubBpmNodeModel;
 import com.alibaba.compileflow.idea.graph.model.UserTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.WaitTaskNodeModel;
+import com.alibaba.compileflow.idea.plugin.lang.Lang;
 
 /**
  * @author xuan
  * @since 2020/5/10
  */
 public class NodeTemplateFactory {
-    
+
     private static List<Template> BPM_TEMPLATE_LIST = new ArrayList<>();
     private static List<Template> BPMN_TEMPLATE_LIST = new ArrayList<>();
 
@@ -48,157 +49,157 @@ public class NodeTemplateFactory {
     static {
         //start
         Template start = new Template();
-        start.name = "开始节点";
+        start.name = Lang.getString("node.name.start");
         start.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/start.png";
         start.style = "start";
         start.width = 30;
         start.height = 30;
         start.value = StartNodeModel.of();
-        ((StartNodeModel)start.value).setName("开始");
+        ((StartNodeModel)start.value).setName(start.name);
         BPM_TEMPLATE_LIST.add(start);
         //end
         Template end = new Template();
-        end.name = "结束节点";
+        end.name = Lang.getString("node.name.end");
         end.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/end.png";
         end.style = "end";
         end.width = 30;
         end.height = 30;
         end.value = EndNodeModel.of();
-        ((EndNodeModel)end.value).setName("结束");
+        ((EndNodeModel)end.value).setName(end.name);
         BPM_TEMPLATE_LIST.add(end);
         //auto
         Template auto = new Template();
-        auto.name = "自动节点";
+        auto.name = Lang.getString("node.name.auto");
         auto.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/auto.png";
         auto.style = "auto";
         auto.width = 90;
         auto.height = 50;
         auto.value = AutoTaskNodeModel.of();
-        ((AutoTaskNodeModel)auto.value).setName("自动节点");
+        ((AutoTaskNodeModel)auto.value).setName(auto.name);
         BPM_TEMPLATE_LIST.add(auto);
         //decision
         Template decision = new Template();
-        decision.name = "判断节点";
+        decision.name = Lang.getString("node.name.decision");
         decision.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/decision.png";
         decision.style = "gateway";
         decision.width = 90;
         decision.height = 50;
         decision.value = DecisionNodeModel.of();
-        ((DecisionNodeModel)decision.value).setName("判断节点");
+        ((DecisionNodeModel)decision.value).setName(decision.name);
         BPM_TEMPLATE_LIST.add(decision);
         //script
         Template script = new Template();
-        script.name = "脚本节点";
+        script.name = Lang.getString("node.name.script");
         script.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/script.png";
         script.style = "script";
         script.width = 90;
         script.height = 50;
         script.value = ScriptTaskNodeModel.of();
-        ((ScriptTaskNodeModel)script.value).setName("脚本节点");
+        ((ScriptTaskNodeModel)script.value).setName(script.name);
         BPM_TEMPLATE_LIST.add(script);
         //subBpm
         Template subBpm = new Template();
-        subBpm.name = "子流程节点";
+        subBpm.name = Lang.getString("node.name.sub");
         subBpm.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/subBpm.png";
         subBpm.style = "subprocess";
         subBpm.width = 90;
         subBpm.height = 50;
         subBpm.value = SubBpmNodeModel.of();
-        ((SubBpmNodeModel)subBpm.value).setName("子流程节点");
+        ((SubBpmNodeModel)subBpm.value).setName(subBpm.name);
         BPM_TEMPLATE_LIST.add(subBpm);
         //user
         Template user = new Template();
-        user.name = "人工节点";
+        user.name = Lang.getString("node.name.user");
         user.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/user.png";
         user.style = "user";
         user.width = 90;
         user.height = 50;
         user.value = UserTaskNodeModel.of();
-        ((UserTaskNodeModel)user.value).setName("人工节点");
+        ((UserTaskNodeModel)user.value).setName(user.name);
         //BPM_TEMPLATE_LIST.add(user);
         //wait
         Template wait = new Template();
-        wait.name = "等待节点";
+        wait.name = Lang.getString("node.name.wait");
         wait.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/wait.png";
         wait.style = "wait";
         wait.width = 90;
         wait.height = 50;
         wait.value = WaitTaskNodeModel.of();
-        ((WaitTaskNodeModel)wait.value).setName("等待节点");
+        ((WaitTaskNodeModel)wait.value).setName(wait.name);
         //BPM_TEMPLATE_LIST.add(wait);
         //note
         Template note = new Template();
-        note.name = "注释节点";
+        note.name = Lang.getString("node.name.note");
         note.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/note.png";
         note.style = "note";
         note.width = 90;
         note.height = 50;
         note.value = NoteNodeModel.of();
-        ((NoteNodeModel)note.value).setName("注释节点");
-        ((NoteNodeModel)note.value).setComment("注释节点");
+        ((NoteNodeModel)note.value).setName(note.name);
+        ((NoteNodeModel)note.value).setComment(note.name);
         BPM_TEMPLATE_LIST.add(note);
         //loop
         Template loop = new Template();
-        loop.name = "循环节点";
+        loop.name = Lang.getString("node.name.loop");
         loop.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/loop.png";
         loop.style = "loopVertex";
         loop.width = 200;
         loop.height = 200;
         loop.value = LoopProcessNodeModel.of();
-        ((LoopProcessNodeModel)loop.value).setName("循环节点");
+        ((LoopProcessNodeModel)loop.value).setName(loop.name);
         BPM_TEMPLATE_LIST.add(loop);
     }
 
     static {
         //start
         Template start = new Template();
-        start.name = "开始节点";
+        start.name = Lang.getString("node.name.start");
         start.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/start.png";
         start.style = "start";
         start.width = 30;
         start.height = 30;
         start.value = StartNodeModel.of();
-        ((StartNodeModel)start.value).setName("开始");
+        ((StartNodeModel)start.value).setName(start.name);
         BPMN_TEMPLATE_LIST.add(start);
         //end
         Template end = new Template();
-        end.name = "结束节点";
+        end.name = Lang.getString("node.name.end");
         end.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/end.png";
         end.style = "end";
         end.width = 30;
         end.height = 30;
         end.value = EndNodeModel.of();
-        ((EndNodeModel)end.value).setName("结束");
+        ((EndNodeModel)end.value).setName(end.name);
         BPMN_TEMPLATE_LIST.add(end);
         //auto
         Template auto = new Template();
-        auto.name = "自动节点";
+        auto.name = Lang.getString("node.name.auto");
         auto.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/auto.png";
         auto.style = "auto";
         auto.width = 90;
         auto.height = 50;
         auto.value = AutoTaskNodeModel.of();
-        ((AutoTaskNodeModel)auto.value).setName("服务节点");
+        ((AutoTaskNodeModel)auto.value).setName(auto.name);
         BPMN_TEMPLATE_LIST.add(auto);
         //decision
         Template decision = new Template();
-        decision.name = "判断节点";
+        decision.name = Lang.getString("node.name.decision");
         decision.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/decision.png";
         decision.style = "gateway";
         decision.width = 90;
         decision.height = 50;
         decision.value = DecisionNodeModel.of();
-        ((DecisionNodeModel)decision.value).setName("判断节点");
+        ((DecisionNodeModel)decision.value).setName(decision.name);
         BPMN_TEMPLATE_LIST.add(decision);
         //script
         Template script = new Template();
-        script.name = "脚本节点";
+        script.name = Lang.getString("node.name.script");
         script.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/script.png";
         script.style = "script";
         script.width = 90;
         script.height = 50;
         script.value = ScriptTaskNodeModel.of();
-        ((ScriptTaskNodeModel)script.value).setName("脚本节点");
+        ((ScriptTaskNodeModel)script.value).setName(script.name);
         BPMN_TEMPLATE_LIST.add(script);
     }
 

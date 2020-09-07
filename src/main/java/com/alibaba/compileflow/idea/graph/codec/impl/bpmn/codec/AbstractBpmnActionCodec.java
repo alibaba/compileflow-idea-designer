@@ -19,7 +19,7 @@ package com.alibaba.compileflow.idea.graph.codec.impl.bpmn.codec;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.alibaba.compileflow.idea.graph.codec.impl.bpmn.xml.Node;
+import com.alibaba.compileflow.idea.graph.util.xml.Node;
 import com.alibaba.compileflow.idea.graph.model.ActionHandleModel;
 import com.alibaba.compileflow.idea.graph.model.ActionModel;
 import com.alibaba.compileflow.idea.graph.model.JavaActionHandleModel;

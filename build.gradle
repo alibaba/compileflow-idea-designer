@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.1'
+version '1.0.2'
 
 sourceCompatibility = 1.8
 
@@ -65,6 +65,10 @@ patchPluginXml {
       <em>1.0.1 优化功能</em><br>
       1. 画图模式和编辑模式友好提示 <br>
       2. 支持画布放大缩小 <br>
+      
+      <em>1.0.2 优化功能</em><br>
+      1. 画图模式和编辑模式友好提示 <br>
+      2. 节点文案使用英文 <br>
       
       """
 
