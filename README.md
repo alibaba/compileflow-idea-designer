@@ -1,3 +1,7 @@
+# compileflow-idea-designer
+
+[📖 English Documentation](README_EN.md) | 📖 中文文档
+ 
 # 是什么？
 * compileflow-idea-designer是一款Idea插件。能够让你轻松完成compileflow引擎的流程的编码设计和属性编辑。
 
