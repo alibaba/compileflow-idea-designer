@@ -1,118 +1,130 @@
 # compileflow-idea-designer
 
-[📖 English Documentation](README_EN.md) | 📖 中文文档
- 
-# 是什么？
-* compileflow-idea-designer是一款Idea插件。能够让你轻松完成compileflow引擎的流程的编码设计和属性编辑。
+📖 English Documentation | [📖 中文文档](README_CN.md)
 
-* compileflow引擎开源地址：https://github.com/alibaba/compileflow
+# What is it?
+compileflow-idea-designer is an Idea plug-in. It allows you to easily complete the coding design and attribute editing of the compileflow engine process.
 
-* 插件最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.1.zip)
-如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.1.for.2020.up.zip)
+Compileflow engine open source address: https://github.com/alibaba/compileflow
 
-# 简介
+Download the latest plug-in installation package, download address: compileflow-idea-designer.zip If you are the 2020 version of idea and above, please download this: compileflow-idea-designer.for.2020.up.zip
 
-### 主要特性
+# Description
+## Main features
+XML source file preview: supports editing and previewing XML source files
 
-* XML源文件预览：支持XML源文件编辑和预览
-* 流程友好可视化：支持XML源文件转Swing图预览，以及导出图片到本地
-* 流程友好可编辑：支持直接在Swing图画布中，拖拽节点，设计流程，以及编辑节点属性，全局属性等
-* Java源码高量显示：流程最终会被编译成Java代码进行执行，设计器支持XML转Java代码的预览效果
-* XML语法错误提示：如打开的XML源文件存在语法错误，会在Java源码预览区进行提示
-* 扩展性：可方便扩展成支持BPMN协议
+Process-friendly visualization: support XML source files to Swing diagram preview, and export pictures to local
 
-### 使用场景
-* 设计业务逻辑流程图，并导出图片保存
-* 设计编辑流程图，生成comileflow引擎所支持的XML源文件
-* 预览已存在的XML源文件
 
-### 设计目标
-* 希望为业务开发提供端至端，从设计至实现的业务流程解决方案
-* 提供多种流程引擎，实现从战略至商业能力，商业能力至业务流程，业务流程至系统，并最终实现业务的可视化全局架构
-* 设计高效的执行引擎，实现对服务的快速组合或扩展，提升研发效率至极致
+Process-friendly and editable: Support drag and drop nodes directly in the Swing diagram canvas, design process, and edit node attributes, global attributes, etc.
 
-### 功能截图
+High-volume display of Java source code: the process will eventually be compiled into Java code for execution, and the designer supports the preview effect of XML to Java code
 
-> Java源码语法高亮
+XML syntax error prompt: If there is a syntax error in the opened XML source file, it will be prompted in the Java source code preview area
+
+Extensibility: can be easily extended to support BPMN protocol
+
+
+
+
+
+# Usage Scenario
+Design the business logic flow chart, and export the picture to save;
+Design and edit flowcharts, generate XML source files supported by the compileflow engine;
+Preview existing XML source files
+
+# Design Target
+
+Provide an end-to-end business process solution from design to execution of business development ideas.
+
+Offer a variety of process engines to realize the visual global architecture, so that strategy easily translates to visualizations, which lead to enhanced business capabilities, processes and system.
+
+
+Design an efficient execution engine that can support the company's rapid deployment of new services, and capable of streamlining processes that accelerate the development response and interaction speed.
+
+# Function Screen
+> Visual code
 ![语法高亮](doc/image/pre_javacode.png)
 
-> 可视化流程编辑
+> Visual process
 ![image](doc/image/pre_chat.png)
 
-> 可读性强的xml语法
+> Visual xml
 ![image](doc/image/pre_xml.png)
 
-> 节点属性编辑
+> Node edit
 ![image](doc/image/pre_edit.png)
 
-# 快速开始
+# Quick Start
+## ZIP Installation
+Download the latest package to the local, download link, please scroll to the top of the page;
 
-### ZIP包安装
+Use the local installation method to install, pay attention to install the entire zip without manually decompressing:Preferences > Plugins > Install plugin from disk;
 
-1. 下载最新包到本地，下载链接，请滚动到页面头部
-2. 使用本地安装的方式安装，注意安装整个zip不用手动解压  Preferences > Plugins > Install plugin from disk
-  ![image](doc/image/install_1.png)
-  ![image](doc/image/install_2.png)
-3. 重启IDE. 查看.bpm文件就会生效
+Restart the IDE. View the .bpm file and it will take effect;
 
-### 插件使用教程
-* 新建BPM文件
-    * STEP1：可在resources目录下创建，选中resources目录右键点击【Create New Bpm File】。例如我这边创建在resources的bpm目录下。
-    ![](doc/image/designer_1.png)
-    * STEP2：输入文件名，例如：我这里的hello
-    ![](doc/image/designer_2.png)
-    * STEP3：插件默认会生成了hello.bpm文件，是一个简单的开平方根demo流程，如下图
-    ![](doc/image/designer_3.png)
-    
-* 可视化编辑
-  * STEP1：你可以选择下方【process-flow】进行可视化编辑，从左侧拖入节点到画布，或者选中节点拖动。
-  ![](doc/image/designer_4.png)
-  - STEP2：双击空白处可编辑全局参数
-  ![](doc/image/designer_5.png)
-  - STEP3：双击节点可以编辑节点参数（拖拽可调整节点位置）
-  ![](doc/image/designer_6.png)
-  
-* Java代码预览
-  * STEP1：你可以选择下方【java code】进行Java代码预览。
-  ![语法高亮](doc/image/pre_javacode.png)
+# Plug-in tutorial
+New BPM file
 
-* 创建测试代码
-  * STEP1：选中文件右键，点击【Create New Bpm JUnit Test】可自动生成测试类
-  ![](doc/image/designer_7.png)
-  * STEP2：到指定路径查看生成的测试类（修改入参数运行整个demo就完成了）
-   ![](doc/image/designer_8.png)
+STEP1: It can be created in the resources directory, select the resources directory and right-click [Create New Bpm File]. For example, I created it in the bpm directory of resources.
+![](doc/image/designer_1.png)
 
+STEP2: Enter the file name, for example: hello inside the red box
+![](doc/image/designer_2.png)
+
+
+STEP3: The plug-in will generate the hello.bpm file by default, which is a simple square root extraction demo process, as shown below
+![](doc/image/designer_3.png)
+
+
+Visual editing
+
+STEP1: You can select [process-flow] below for visual editing, drag the node from the left to the canvas, or select the node and drag it.
+![](doc/image/designer_4.png)
+
+STEP2: Double-click the blank space to edit global parameters
+![](doc/image/designer_5.png)
+
+STEP3: Double-click the node to edit the node parameters (drag and drop to adjust the position of the node)
+![](doc/image/designer_6.png)
+
+
+Java code preview
+
+STEP1: You can select [java code] below to preview the Java code. Syntax highlighting
+![](doc/image/pre_javacode.png)
+
+Create test code
+
+STEP1: Right-click the file and click [Create New Bpm JUnit Test] to automatically generate test classes
+![](doc/image/designer_7.png)
+
+STEP2: Go to the specified path to view the generated test class (modify the input parameters and run the entire demo to complete)
+![](doc/image/designer_8.png)
 
 # Changelog
+* First release version: 1.0.0 (2020.08.16) by xuan
+* Optimization function: 1.0.1 (2020.08.17) by xuan
+    * Friendly tips on how to effectively set node attributes in drawing mode and editing mode
+    * Add canvas zoom in and zoom out function
+* Optimization function: 1.0.2（2020.09.07）by xuan
+    * Node use English
 
-* 首发版本：1.0.0（2020.08.16）by xuan
-* 优化功能：1.0.1（2020.08.17）by xuan
-    * 友好提示绘图模式和编辑模式状态下，如何有效设置节点属性
-    * 新增画布放大缩小功能
-* 优化功能：1.0.2（2020.09.07）by xuan
-    * 节点文案使用英文
-
-# 附录
-
-### idea plugin 开发学习资料
+# Appendix
+idea plugin development learning materials
 
 1. [IntelliJ Platform SDK DevGuide](https://www.jetbrains.org/intellij/sdk/docs/welcome.html)
-2. [jgraph学习资料](https://jgraph.github.io/mxgraph/docs/tutorial.html)
-3. [miglayout学习资料](http://www.miglayout.com/whitepaper.html)
-4. [java SWING学习资料](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+2. [Jgraph Learning materials](https://jgraph.github.io/mxgraph/docs/tutorial.html)
+3. [Miglayout Learning materials](http://www.miglayout.com/whitepaper.html)
+4. [Java SWING Learning materials](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
 5. [SDK build number](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html)
-6. 入门demo：https://github.com/xuan698400/compileflow_demo
-7. 我们能从InteliJ IDEA中学到什么？ https://developer.aliyun.com/article/696827
-8. 编程10年感悟：https://www.infoq.cn/article/YD-tGFJPdGMVluYIkcc0 
+6. demo：https://github.com/xuan698400/compileflow_demo
+7. What can we learn from intelij idea? https://developer.aliyun.com/article/696827
+8. 10 years of programming experience: https://www.infoq.cn/article/YD-tGFJPdGMVluYIkcc0 
 
-### 版本升级备注
+# Welcome to contact us
 
-1. build.gradle 修改version和changeNotes
-2. plugin.xml 修改version
-3. README.md 修改记录Changelog
-4. CompileFlow.java 修改version
+1. DingDing @徐工 @余苏 @梵度 @哲良  @无相
+2. Feedback email：xuan.xa@alibaba-inc.com
 
-# 欢迎联系我们
 
-1. 请钉钉联系 @徐工 @余苏 @梵度 @哲良  @无相
-2. 问题反馈邮箱：xuan.xa@alibaba-inc.com
