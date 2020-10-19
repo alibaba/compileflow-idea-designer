@@ -124,9 +124,21 @@ idea plugin development learning materials
 
 # Welcome to contact us
 
+### 联系方式
+
 1. DingDing @徐工 @余苏 @梵度 @哲良  @无相
 2. Feedback email：xuan.xa@alibaba-inc.com
 3. compileflow交流群
-![语法高亮](doc/image/g.JPG)
+![](doc/image/gs.jpg)
+
+
+### Known Users
+Welcome to register the company name in this issue: https://github.com/alibaba/compileflow/issues/9
+
+![](doc/image/known_users/alibaba.png)
+![](doc/image/known_users/alipay.png)
+![](doc/image/known_users/aliyun.png)
+![](doc/image/known_users/taobao.png)
+![](doc/image/known_users/tmall.png)
 
 
