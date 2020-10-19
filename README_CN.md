@@ -116,3 +116,5 @@
 
 1. 请钉钉联系 @徐工 @余苏 @梵度 @哲良  @无相
 2. 问题反馈邮箱：xuan.xa@alibaba-inc.com
+3. compileflow交流群
+![语法高亮](doc/image/g.JPG)

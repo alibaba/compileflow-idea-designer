@@ -126,5 +126,7 @@ idea plugin development learning materials
 
 1. DingDing @徐工 @余苏 @梵度 @哲良  @无相
 2. Feedback email：xuan.xa@alibaba-inc.com
+3. compileflow交流群
+![语法高亮](doc/image/g.JPG)
 
 
