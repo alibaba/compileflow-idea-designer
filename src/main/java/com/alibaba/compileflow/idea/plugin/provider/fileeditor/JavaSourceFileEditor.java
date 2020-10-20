@@ -21,6 +21,7 @@ import com.alibaba.compileflow.idea.plugin.LanguageConstants;
 import com.alibaba.compileflow.idea.graph.codec.ModelConvertFactory;
 import com.alibaba.compileflow.idea.graph.util.FileUtil;
 import com.alibaba.compileflow.idea.graph.model.BpmModel;
+import com.alibaba.fastjson.JSON;
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.highlighter.JavaFileType;
@@ -132,9 +133,13 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
                 bpmCode = bpmModel.getCode();
             }
         } catch (Throwable e) {
+            logger.error(e);
             javaCode = "//Bpm file is illegal. Case:";
             javaCode += "\n";
             javaCode += "//" + e.getMessage();
+
+            javaCode += "\n";
+            javaCode += "//" + JSON.toJSONString(e);
 
             javaCode += "\n";
             javaCode += "\n";

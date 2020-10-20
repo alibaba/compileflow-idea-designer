@@ -7,8 +7,8 @@
 
 * compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
-* 插件最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.1.zip)
-如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.1.for.2020.up.zip)
+* 插件最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.3.zip)
+如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.3.for.2020.up.zip)
 
 # 简介
 
@@ -91,6 +91,10 @@
     * 新增画布放大缩小功能
 * 优化功能：1.0.2（2020.09.07）by xuan
     * 节点文案使用英文
+* bugfix：1.0.3（2020.10.20）by xuan
+    * 修复预览javacode不展示问题
+      
+      
 
 # 附录
 
