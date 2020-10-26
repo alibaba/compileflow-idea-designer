@@ -21,8 +21,8 @@ import com.alibaba.compileflow.idea.plugin.LanguageConstants;
 import com.alibaba.compileflow.idea.graph.codec.ModelConvertFactory;
 import com.alibaba.compileflow.idea.graph.util.FileUtil;
 import com.alibaba.compileflow.idea.graph.model.BpmModel;
-import com.alibaba.fastjson.JSON;
 
+import com.google.gson.Gson;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.highlighter.JavaFileType;
 import com.intellij.ide.structureView.StructureViewBuilder;
@@ -139,7 +139,8 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
             javaCode += "//" + e.getMessage();
 
             javaCode += "\n";
-            javaCode += "//" + JSON.toJSONString(e);
+            Gson gson = new Gson();
+            javaCode += "//" + gson.toJson(e);
 
             javaCode += "\n";
             javaCode += "\n";

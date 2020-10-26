@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.3'
+version '1.0.4'
 
 sourceCompatibility = 1.8
 
@@ -73,6 +73,9 @@ patchPluginXml {
       
       <em>1.0.3 bugfix</em><br>
       1. 修复预览javacode不展示问题 <br>
+      
+      <em>1.0.4 bugfix</em><br>
+      1. 修复生成测试类找不到问题，以及类目未对应问题 <br>
       
       """
 
