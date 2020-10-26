@@ -160,7 +160,7 @@ public class Model2GraphConvert {
             LoopProcessNodeModel loopModel = (LoopProcessNodeModel)model;
             GeolocationModel g1 = new GeolocationModel(loopModel.getG());
             v = graph.insertVertex(parent, loopModel.getId(), loopModel, g1.x, g1.y, g1.w,
-                g1.h, "loopVertex");
+                g1.h, "loop");
         } else if (model instanceof StartNodeModel) {
             model.setName("开始");
             GeolocationModel g1 = new GeolocationModel(model.getG());
@@ -182,11 +182,11 @@ public class Model2GraphConvert {
         } else if (model instanceof UserTaskNodeModel) {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
-                g1.h, "user");
+                g1.h, "default");
         } else if (model instanceof WaitTaskNodeModel) {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
-                g1.h, "wait");
+                g1.h, "default");
         } else if (model instanceof AutoTaskNodeModel) {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,

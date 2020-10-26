@@ -1,170 +1,4 @@
 <Stylesheet>
-    <!-- 默认 -->
-    <add as="defaultVertex">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-    </add>
-    <add as="auto">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/auto.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="top"/>
-    </add>
-    <add as="defaultEdge">
-        <add as="shape" value="connector"/>
-        <add as="rounded" value="1"/>
-        <add as="edgeStyle" value="segmentEdgeStyle"/>
-        <add as="endArrow" value="classic"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="fontColor" value="#1890ff"/>
-        <add as="strokeColor" value="#336699"/>
-        <add as="startSize" value="7"/>
-        <add as="endSize" value="10"/>
-    </add>
-    <add as="loopVertex">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="top"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-    </add>
-    <add as="startEndVertex">
-        <add as="shape" value="ellipse"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-    </add>
-    <add as="note">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/note.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="top"/>
-    </add>
-    <add as="script">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/script.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="top"/>
-    </add>
-    <add as="user">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/user.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="top"/>
-    </add>
-    <add as="wait">
-        <add as="shape" value="label"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="perimeter" value="rectanglePerimeter"/>
-        <add as="fontSize" value="14"/>
-        <add as="align" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="spacingTop" value="2"/>
-        <add as="fontColor" value="#073642"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/wait.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="top"/>
-    </add>
-    <add as="subprocess" extend="activity">
-        <add as="shape" value="label"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="foldable" value="true"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/subBpm.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="top"/>
-    </add>
-    <add as="gateway" >
-        <add as="shape" value="rhombus"/>
-        <add as="perimeter" value="rhombusPerimeter"/>
-        <add as="verticalLabelPosition" value="center"/>
-        <add as="verticalAlign" value="middle"/>
-        <add as="fillColor" value="#f0f5ff"/>
-        <add as="type" value=""/>
-        <add as="shadow" value="1"/>
-        <add as="fontSize" value="13"/>
-        <add as="align" value="center"/>
-        <!--<add as="spacingTop" value="8"/>-->
-        <add as="fontColor" value="#774400"/>
-        <add as="strokeColor" value="#FFFFFF"/>
-        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/decision.png"/>
-        <add as="imageWidth" value="15"/>
-        <add as="imageHeight" value="15"/>
-        <add as="imageVerticalAlign" value="middle"/>
-    </add>
     <add as="start">
         <add as="shape" value="ellipse"/>
         <add as="type" value=""/>
@@ -191,216 +25,138 @@
         <add as="strokeColor" value="#FFFFFF"/>
         <add as="fillColor" value="#f0f5ff"/>
     </add>
-
-    <add as="image">
-        <add as="shape" value="image"/>
-        <add as="type" value="image"/>
-        <add as="labelPosition" value="center"/>
-        <add as="verticalLabelPosition" value="bottom"/>
+    <add as="gateway">
+        <add as="shape" value="rhombus"/>
+        <add as="perimeter" value="rhombusPerimeter"/>
+        <add as="verticalLabelPosition" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="fillColor" value="#f0f5ff"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="fontSize" value="13"/>
+        <add as="align" value="center"/>
+        <add as="fontColor" value="#774400"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/decision.png"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="middle"/>
+    </add>
+    <add as="loop">
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
         <add as="align" value="center"/>
         <add as="verticalAlign" value="top"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="fillColor" value="#f0f5ff"/>
     </add>
-    <add as="pool" extend="defaultVertex">
-        <add as="shape" value="swimlane"/>
-        <add as="auto" value="1"/>
-        <add as="spacingTop" value="5"/>
-        <add as="shadow" value="0"/>
-        <add as="fontSize" value="14"/>
-        <add as="fontStyle" value="1"/>
-        <add as="startSize" value="25"/>
-        <add as="horizontal" value="0"/>
-        <add as="fillColor" value="#999999"/>
-        <add as="fontColor" value="#000000"/>
-        <add as="foldable" value="true"/>
-        <!--<add as="image" value="/com/timout/bpmn/images/marker_multiple.png"/>-->
-    </add>
-    <add as="lane" extend="pool">
-        <add as="opacity" value="30"/>
-        <add as="textOpacity" value="100"/>
-        <add as="fillColor" value="#FFFF99"/>
-        <add as="fontColor" value="#000000"/>
-        <add as="foldable" value="false"/>
-    </add>
-    <add as="verticalPool" extend="pool">
-        <add as="horizontal" value="1"/>
-    </add>
-    <add as="verticalLane" extend="lane">
-        <add as="horizontal" value="1"/>
-    </add>
-    <add as="association" extend="defaultEdge">
-        <add as="dashed" value="1"/>
-        <add as="edgeStyle" value="none"/>
-        <add as="startArrow" value="none"/>
-        <add as="endArrow" value="none"/>
-    </add>
-    <add as="conversationLink" extend="defaultEdge">
-        <add as="shape" value="conversationLink"/>
-        <add as="sourcePerimeterSpacing" value="3"/>
-        <add as="targetPerimeterSpacing" value="3"/>
-    </add>
-    <add as="messageFlow" extend="defaultEdge">
-        <add as="dashed" value="1"/>
-        <add as="elbow" value="vertical"/>
-        <add as="startArrow" value="open_oval"/>
-        <add as="endArrow" value="open_block"/>
-    </add>
-    <add as="dataAssociation" extend="defaultEdge">
-        <add as="dashed" value="1"/>
-        <add as="startArrow" value="none"/>
-        <add as="endArrow" value="open"/>
-    </add>
-    <add as="compensationAssociation" extend="dataAssociation">
-    </add>
-    <add as="message" extend="image">
-        <add as="type" value="message"/>
-        <add as="labelPosition" value="right"/>
-        <add as="verticalLabelPosition" value="middle"/>
-        <add as="align" value="left"/>
-        <add as="verticalAlign" value="middle"/>
-    </add>
-    <add as="initiatingMessage" extend="message">
-        <add as="init" value="1"/>
-        <add as="image" value="/com/timout/bpm/images/message_initiating.png"/>
-    </add>
-    <add as="nonInitiatingMessage" extend="message">
-        <add as="init" value="0"/>
-        <add as="image" value="/com/timout/bpm/images/message_non_initiating.png"/>
-    </add>
-    <add as="activity" extend="defaultVertex">
+    <add as="subprocess">
         <add as="rounded" value="1"/>
-    </add>
-    <add as="task" extend="activity">
-        <add as="shape" value="activity"/>
-        <add as="fillColor" value="#f0f5ff"/>
-    </add>
-    <add as="callTask" extend="task">
-        <add as="strokeWidth" value="3"/>
-    </add>
-    <add as="exclusiveGateway" extend="gateway">
-    </add>
-    <add as="exclusiveGatewayWithIndicator" extend="exclusiveGateway">
-    </add>
-    <add as="callProcess" extend="activity">
-        <add as="shape" value="subprocess"/>
-        <add as="strokeWidth" value="3"/>
-        <add as="fillColor" value="#f0f5ff"/>
-    </add>
-    <add as="choreography" extend="activity">
-        <add as="shape" value="activity"/>
-        <add as="type" value="choreography"/>
-    </add>
-    <add as="subChoreography" extend="activity">
-        <add as="shape" value="activity"/>
-        <add as="type" value="sub_choreography"/>
-    </add>
-    <add as="choreographyTask" extend="defaultVertex">
-        <add as="shape" value="activity"/>
-        <add as="type" value="choreography_task"/>
-        <add as="shadow" value="0"/>
-        <add as="fillColor" value="#99FF99"/>
-    </add>
-    <add as="choreographySubprocess" extend="defaultVertex">
-        <add as="shape" value="subprocess"/>
-        <add as="type" value="choreography_subprocess"/>
-        <add as="shadow" value="0"/>
-        <add as="fillColor" value="#CCCCFF"/>
-    </add>
-    <add as="choreographyParticipant" extend="defaultVertex">
-        <add as="shape" value="participantBand"/>
-        <add as="verticalAlign" value="top"/>
-        <add as="spacingTop" value="5"/>
-        <add as="fillColor" value="#999999"/>
-        <add as="border" value="1"/>
-    </add>
-    <add as="participantTop" extend="choreographyParticipant">
-        <add as="position" value="top"/>
-    </add>
-    <add as="participantBottom" extend="choreographyParticipant">
-        <add as="position" value="bottom"/>
-    </add>
-    <add as="participantAdditionalTop" extend="choreographyParticipant">
-        <add as="position" value="top"/>
-        <add as="border" value="0"/>
-    </add>
-    <add as="participantAdditionalBottom" extend="choreographyParticipant">
-        <add as="position" value="bottom"/>
-        <add as="border" value="0"/>
-    </add>
-    <add as="callChoreographyTask" extend="choreography">
-        <add as="call" value="1"/>
-    </add>
-    <add as="callChoreography" extend="subChoreography">
-        <add as="call" value="1"/>
-    </add>
-    <add as="conversation" extend="defaultVertex">
-        <add as="shape" value="conversationNode"/>
-        <add as="verticalLabelPosition" value="top"/>
-        <add as="verticalAlign" value="bottom"/>
-        <add as="fillColor" value="#ABC5FF"/>
-    </add>
-    <add as="subConversation" extend="conversation">
-        <add as="image" value="/com/timout/bpm/images/conversation_marker.png"/>
-    </add>
-    <add as="callConversation" extend="conversation">
-        <add as="call" value="1"/>
-        <add as="strokeWidth" value="3"/>
-    </add>
-    <add as="callCollaboration" extend="subConversation">
-        <add as="call" value="1"/>
-        <add as="strokeWidth" value="3"/>
-    </add>
-    <add as="annotation" extend="defaultVertex">
-        <add as="shape" value="annotation"/>
-        <add as="align" value="left"/>
-    </add>
-    <add as="dataObject" extend="defaultVertex">
-        <add as="shape" value="dataobject"/>
-        <add as="verticalLabelPosition" value="bottom"/>
-        <add as="verticalAlign" value="top"/>
-    </add>
-    <add as="group" extend="defaultVertex">
-        <add as="shape" value="group"/>
-        <add as="rounded" value="1"/>
-        <add as="shadow" value="0"/>
-        <add as="verticalAlign" value="top"/>
-        <add as="dashed" value="1"/>
-    </add>
-    <add as="dataStore" extend="defaultVertex">
-        <add as="shape" value="datastore"/>
-        <add as="verticalLabelPosition" value="bottom"/>
-        <add as="verticalAlign" value="top"/>
-    </add>
-    <add as="event" extend="defaultVertex">
-        <add as="shape" value="event"/>
-        <add as="perimeter" value="ellipsePerimeter"/>
-        <add as="verticalLabelPosition" value="bottom"/>
-        <add as="imageWidth" value="22"/>
-        <add as="imageHeight" value="22"/>
-    </add>
-    <add as="startEvent" >
-        <add as="shape" value="event"/>
-        <add as="perimeter" value="ellipsePerimeter"/>
-        <add as="verticalLabelPosition" value="bottom"/>
-        <add as="fillColor" value="#f0f5ff"/>
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/subBpm.png"/>
+
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
         <add as="shadow" value="1"/>
-    </add>
-    <add as="startMultipleEvent" extend="startEvent">
-    </add>
-    <add as="startParallelMultipleEvent" extend="startEvent">
-    </add>
-    <add as="endEvent" extend="event">
-        <add as="strokeWidth" value="4"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
         <add as="fillColor" value="#f0f5ff"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="top"/>
     </add>
-    <add as="endMultipleEvent" extend="endEvent">
+    <add as="note">
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/note.png"/>
+
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="fillColor" value="#f0f5ff"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="top"/>
     </add>
-    <add as="intermediateEvent" extend="event">
-        <add as="fillColor" value="#C8FF00"/>
+    <add as="script">
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/script.png"/>
+
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="fillColor" value="#f0f5ff"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="top"/>
     </add>
-    <add as="intermediateMultipleEvent" extend="intermediateEvent">
+    <add as="auto">
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/auto.png"/>
+
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="fillColor" value="#f0f5ff"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="top"/>
     </add>
-    <add as="intermediateMultipleThrowEvent" extend="intermediateEvent">
+    <add as="default">
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/auto.png"/>
+
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="fillColor" value="#f0f5ff"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="top"/>
     </add>
-    <add as="intermediateParallelMultipleEvent" extend="intermediateEvent">
+    <add as="defaultEdge">
+        <add as="shape" value="connector"/>
+        <add as="rounded" value="1"/>
+        <add as="edgeStyle" value="segmentEdgeStyle"/>
+        <add as="endArrow" value="classic"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="fontColor" value="#1890ff"/>
+        <add as="strokeColor" value="#336699"/>
+        <add as="startSize" value="7"/>
+        <add as="endSize" value="10"/>
     </add>
 </Stylesheet>

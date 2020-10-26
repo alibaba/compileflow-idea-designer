@@ -42,7 +42,7 @@ import java.io.File;
  * @since 2019/3/9
  */
 public class CreateTestAction extends AnAction {
-    private final static String TEST_FILE_SUFFIX = "_BPM_TEST.java";
+    private final static String TEST_FILE_SUFFIX = "Flow_TEST.java";
     private final static String PROCESS = "process";
 
     @Override
