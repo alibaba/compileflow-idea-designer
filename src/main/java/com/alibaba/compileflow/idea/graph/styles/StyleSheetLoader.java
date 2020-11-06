@@ -16,6 +16,8 @@
  */
 package com.alibaba.compileflow.idea.graph.styles;
 
+import com.alibaba.compileflow.idea.graph.util.SettingsUtils;
+
 import com.mxgraph.util.mxUtils;
 import com.mxgraph.view.mxStylesheet;
 import org.w3c.dom.Document;
@@ -25,11 +27,14 @@ import org.w3c.dom.Document;
  */
 public class StyleSheetLoader {
 
-    private static final String DEFAULT_STYLE_XML = "/com/alibaba/compileflow/idea/graph/styles/default-style.xml";
+    private static final String STYLE_XML_DIR = "/com/alibaba/compileflow/idea/graph/styles/";
 
     public mxStylesheet load() {
 
-        Document doc = mxUtils.loadDocument(StyleSheetLoader.class.getResource(DEFAULT_STYLE_XML).toString());
+        String style = SettingsUtils.getStyle();
+        String styleFilePath = STYLE_XML_DIR + style + ".xml";
+
+        Document doc = mxUtils.loadDocument(StyleSheetLoader.class.getResource(styleFilePath).toString());
         StylesheetCodec codec = new StylesheetCodec();
         return codec.decode(doc);
     }

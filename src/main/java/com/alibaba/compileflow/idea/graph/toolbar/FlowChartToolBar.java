@@ -21,6 +21,7 @@ import com.alibaba.compileflow.idea.graph.toolbar.action.HelpAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.MoreBigAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.MoreSmallAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.PngEncodeAction;
+import com.alibaba.compileflow.idea.graph.toolbar.action.SettingsAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.SwitchModelAction;
 import com.alibaba.compileflow.idea.graph.toolbar.action.VersionAction;
 import com.alibaba.compileflow.idea.graph.FlowChartComponent;
@@ -64,6 +65,8 @@ public class FlowChartToolBar extends JToolBar {
             "/com/alibaba/compileflow/idea/graph/images/toolbar/more_big.png", editor));
         add(bind("MoreSmall", new MoreSmallAction(editor.getGraphComponent()),
             "/com/alibaba/compileflow/idea/graph/images/toolbar/more_small.png", editor));
+        add(bind("Settings", new SettingsAction(editor.getProject(), editor.getGraph()),
+            "/com/alibaba/compileflow/idea/graph/images/toolbar/settings.png", editor));
         addSeparator();
 
         SwitchModelAction switchModelAction = new SwitchModelAction();
