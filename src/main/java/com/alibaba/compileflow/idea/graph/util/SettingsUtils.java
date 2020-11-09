@@ -28,10 +28,10 @@ public class SettingsUtils {
 
     private static final String STYLE_KEY = "style";
     public static final String STYLE_VALUE_CLASSIC = "classic";
-    public static final String STYLE_VALUE_COLOUR = "colour";
+    public static final String STYLE_VALUE_COLOR = "color";
 
     public static void setStyle(String style) {
-        if (!STYLE_VALUE_CLASSIC.equals(style) && !STYLE_VALUE_COLOUR.equals(style)) {
+        if (!STYLE_VALUE_CLASSIC.equals(style) && !STYLE_VALUE_COLOR.equals(style)) {
             style = STYLE_VALUE_CLASSIC;
         }
         LocalKvUtil.put(PATH, STYLE_KEY, style);
@@ -39,7 +39,7 @@ public class SettingsUtils {
 
     public static String getStyle() {
         String style = LocalKvUtil.get(PATH, STYLE_KEY);
-        if (!STYLE_VALUE_CLASSIC.equals(style) && !STYLE_VALUE_COLOUR.equals(style)) {
+        if (!STYLE_VALUE_CLASSIC.equals(style) && !STYLE_VALUE_COLOR.equals(style)) {
             style = STYLE_VALUE_CLASSIC;
         }
         return style;

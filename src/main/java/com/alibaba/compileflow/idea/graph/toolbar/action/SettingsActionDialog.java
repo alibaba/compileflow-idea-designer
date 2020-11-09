@@ -40,7 +40,7 @@ public class SettingsActionDialog extends DialogWrapper {
      */
     private JLabel styleTips = new JLabel("Choice the style");
     private ComboBox<String> styleCb = new ComboBox<>(
-        new String[] {SettingsUtils.STYLE_VALUE_CLASSIC, SettingsUtils.STYLE_VALUE_COLOUR});
+        new String[] {SettingsUtils.STYLE_VALUE_CLASSIC, SettingsUtils.STYLE_VALUE_COLOR});
 
     public SettingsActionDialog(@Nullable Project project, Graph graph) {
         super(project);
