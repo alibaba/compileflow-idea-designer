@@ -43,7 +43,7 @@
         <add as="startSize" value="7"/>
         <add as="endSize" value="10"/>
     </add>
-    <add as="loopVertex">
+    <add as="loop">
         <add as="shape" value="label"/>
         <add as="type" value=""/>
         <add as="shadow" value="1"/>

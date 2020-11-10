@@ -19,6 +19,8 @@ package com.alibaba.compileflow.idea.graph.palette;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.alibaba.compileflow.idea.graph.model.BreakNodeModel;
+import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
 import com.alibaba.compileflow.idea.graph.util.Constants;
 import com.alibaba.compileflow.idea.graph.model.LoopProcessNodeModel;
 import com.alibaba.compileflow.idea.graph.palette.EditorPaletteModel.Template;
@@ -142,12 +144,31 @@ public class NodeTemplateFactory {
         Template loop = new Template();
         loop.name = Lang.getString("node.name.loop");
         loop.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/loop.png";
-        loop.style = "loopVertex";
+        loop.style = "loop";
         loop.width = 200;
         loop.height = 200;
         loop.value = LoopProcessNodeModel.of();
         ((LoopProcessNodeModel)loop.value).setName(loop.name);
         BPM_TEMPLATE_LIST.add(loop);
+        //loop
+        Template continuee = new Template();
+        continuee.name = Lang.getString("node.name.continue");
+        continuee.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/continue.png";
+        continuee.style = "continue";
+        continuee.width = 80;
+        continuee.height = 40;
+        continuee.value = ContinueNodeModel.of();
+        ((ContinueNodeModel)continuee.value).setName(continuee.name);
+        BPM_TEMPLATE_LIST.add(continuee);
+        Template breakk = new Template();
+        breakk.name = Lang.getString("node.name.break");
+        breakk.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/break.png";
+        breakk.style = "break";
+        breakk.width = 80;
+        breakk.height = 40;
+        breakk.value = BreakNodeModel.of();
+        ((BreakNodeModel)breakk.value).setName(breakk.name);
+        BPM_TEMPLATE_LIST.add(breakk);
     }
 
     static {

@@ -11,6 +11,8 @@
         <item key="node.name.wait" value="wait"/>
         <item key="node.name.note" value="note"/>
         <item key="node.name.loop" value="loop"/>
+        <item key="node.name.continue" value="continue"/>
+        <item key="node.name.break" value="break"/>
     </organization>
 
     <organization name="zh_CN">
@@ -24,5 +26,7 @@
         <item key="node.name.wait" value="等待节点"/>
         <item key="node.name.note" value="注释节点"/>
         <item key="node.name.loop" value="循环节点"/>
+        <item key="node.name.continue" value="中断节点"/>
+        <item key="node.name.break" value="跳出节点"/>
     </organization>
 </lang>

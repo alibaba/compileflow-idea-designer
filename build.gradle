@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.5'
+version '1.0.6'
 
 sourceCompatibility = 1.8
 
@@ -76,6 +76,9 @@ patchPluginXml {
       
       <em>1.0.5 features</em><br>
       1. 支持切换主题 <br>
+      
+      <em>1.0.6 features</em><br>
+      1. 支持循环节点中的continue节点和break节点 <br>
       
       """
 

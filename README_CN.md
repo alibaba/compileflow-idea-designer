@@ -7,8 +7,8 @@
 
 * compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
-* 插件最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.5.zip)
-如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.5.for.2020.up.zip)
+* 插件最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.6.zip)
+如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.6.for.2020.up.zip)
 
 # 简介
 
@@ -97,6 +97,8 @@
     * 修复生成测试类找不到问题，以及类目未对应问题
 * 新特性：1.0.5（2020.11.06）by xuan
     * 支持切换主题
+* 新特性：1.0.6（2020.11.10）by xuan
+        * 支持循环节点中的continue节点和break节点
       
       
 

@@ -46,6 +46,10 @@ public class NodeCloneFactory {
             ((NoteNodeModel)newModel).setComment(((NoteNodeModel)oldModel).getComment());
         } else if (oldModel instanceof LoopProcessNodeModel) {
             newModel = LoopProcessNodeModel.of();
+        } else if (oldModel instanceof ContinueNodeModel) {
+            newModel = ContinueNodeModel.of();
+        } else if (oldModel instanceof BreakNodeModel) {
+            newModel = BreakNodeModel.of();
         } else {
             newModel = AutoTaskNodeModel.of();
         }

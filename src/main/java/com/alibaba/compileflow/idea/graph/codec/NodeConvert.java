@@ -22,6 +22,8 @@ import java.util.stream.Collectors;
 
 import com.alibaba.compileflow.engine.definition.common.var.IVar;
 import com.alibaba.compileflow.engine.definition.tbbpm.AutoTaskNode;
+import com.alibaba.compileflow.engine.definition.tbbpm.BreakNode;
+import com.alibaba.compileflow.engine.definition.tbbpm.ContinueNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.DecisionNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.EndNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.FlowNode;
@@ -34,6 +36,8 @@ import com.alibaba.compileflow.engine.definition.tbbpm.Transition;
 import com.alibaba.compileflow.engine.definition.tbbpm.WaitTaskNode;
 import com.alibaba.compileflow.idea.graph.model.AutoTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.BaseNodeModel;
+import com.alibaba.compileflow.idea.graph.model.BreakNodeModel;
+import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
 import com.alibaba.compileflow.idea.graph.model.DecisionNodeModel;
 import com.alibaba.compileflow.idea.graph.model.EndNodeModel;
 import com.alibaba.compileflow.idea.graph.model.LoopProcessNodeModel;
@@ -148,6 +152,18 @@ public class NodeConvert {
             waitTaskNode.setInAction(ActionConvert.toAction(waitTaskNodeModel.getInAction()));
             waitTaskNode.setOutAction(ActionConvert.toAction(waitTaskNodeModel.getOutAction()));
             return waitTaskNode;
+        } else if (model instanceof ContinueNodeModel) {
+            ContinueNodeModel continueNodeModel = (ContinueNodeModel)model;
+            ContinueNode continueNode = new ContinueNode();
+            fillToNode(continueNode, continueNodeModel);
+            continueNode.setExpression(continueNodeModel.getExpression());
+            return continueNode;
+        } else if (model instanceof BreakNodeModel) {
+            BreakNodeModel breakNodeModel = (BreakNodeModel)model;
+            BreakNode breakNode = new BreakNode();
+            fillToNode(breakNode, breakNodeModel);
+            breakNode.setExpression(breakNodeModel.getExpression());
+            return breakNode;
         }
 
         return null;
@@ -240,6 +256,18 @@ public class NodeConvert {
             fillToModel(model, waitTaskNode);
             model.setInAction(ActionConvert.toModel(waitTaskNode.getInAction()));
             model.setOutAction(ActionConvert.toModel(waitTaskNode.getOutAction()));
+            return model;
+        } else if (node instanceof ContinueNode) {
+            ContinueNode continueNode = (ContinueNode)node;
+            ContinueNodeModel model = ContinueNodeModel.of();
+            fillToModel(model, continueNode);
+            model.setExpression(continueNode.getExpression());
+            return model;
+        } else if(node instanceof BreakNode){
+            BreakNode breakNode = (BreakNode)node;
+            BreakNodeModel model = BreakNodeModel.of();
+            fillToModel(model, breakNode);
+            model.setExpression(breakNode.getExpression());
             return model;
         }
 

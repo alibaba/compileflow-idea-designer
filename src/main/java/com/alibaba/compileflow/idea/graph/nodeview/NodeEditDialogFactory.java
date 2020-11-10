@@ -16,8 +16,12 @@
  */
 package com.alibaba.compileflow.idea.graph.nodeview;
 
+import com.alibaba.compileflow.idea.graph.model.BreakNodeModel;
+import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.AutoTaskDialog;
+import com.alibaba.compileflow.idea.graph.nodeview.dialog.BreakDialog;
+import com.alibaba.compileflow.idea.graph.nodeview.dialog.ContinueDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.LoopTaskDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.NoActionDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.NoteDialog;
@@ -86,6 +90,14 @@ public class NodeEditDialogFactory {
 
         if (node instanceof StartNodeModel || node instanceof EndNodeModel) {
             return new NoActionDialog(project, cell, graph);
+        }
+
+        if(node instanceof ContinueNodeModel){
+            return new ContinueDialog(project, cell, graph);
+        }
+
+        if(node instanceof BreakNodeModel){
+            return new BreakDialog(project, cell, graph);
         }
 
         throw new IllegalStateException("node can find model. node class:" + node.getClass());

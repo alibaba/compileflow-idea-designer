@@ -16,6 +16,8 @@
  */
 package com.alibaba.compileflow.idea.graph.codec.impl.tbbpm;
 
+import com.alibaba.compileflow.idea.graph.model.BreakNodeModel;
+import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
 import com.alibaba.compileflow.idea.graph.model.EdgeModel;
 import com.alibaba.compileflow.idea.graph.model.TransitionModel;
 import com.alibaba.compileflow.idea.graph.model.GeolocationModel;
@@ -43,7 +45,6 @@ import javax.swing.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author wuxiang
@@ -191,6 +192,14 @@ public class Model2GraphConvert {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
                 g1.h, "auto");
+        } else if (model instanceof ContinueNodeModel) {
+            GeolocationModel g1 = new GeolocationModel(model.getG());
+            v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
+                g1.h, "continue");
+        } else if (model instanceof BreakNodeModel) {
+            GeolocationModel g1 = new GeolocationModel(model.getG());
+            v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
+                g1.h, "break");
         } else {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
