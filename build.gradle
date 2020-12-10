@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.6'
+version '1.0.7'
 
 sourceCompatibility = 1.8
 
@@ -51,9 +51,9 @@ allprojects {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2018.2'
-//    version '2020.1'
-//    plugins = ['java']
+//    version '2018.2'
+    version '2020.1'
+    plugins = ['java']
 }
 patchPluginXml {
     changeNotes """
@@ -80,8 +80,11 @@ patchPluginXml {
       <em>1.0.6 features</em><br>
       1. 支持循环节点中的continue节点和break节点 <br>
       
+      <em>1.0.7 bugfix</em><br>
+      1. 支持最新idea203版本 <br>
+      
       """
 
     sinceBuild '162.*'
-    untilBuild '202.*'
+    untilBuild '203.*'
 }

@@ -7,8 +7,8 @@ compileflow-idea-designer is an Idea plug-in. It allows you to easily complete t
 
 Compileflow engine open source address: https://github.com/alibaba/compileflow
 
-* Download the latest plug-in installation package, download address::[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.6.zip)
-If you are the 2020 version of idea and above, please download this:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.6.for.2020.up.zip)
+* Download the latest plug-in installation package, download address::[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.7.zip)
+If you are the 2020 version of idea and above, please download this:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.7.for.2020.up.zip)
 
 # Description
 ## Main features
@@ -117,7 +117,9 @@ STEP2: Go to the specified path to view the generated test class (modify the inp
 * new features：1.0.5（2020.11.06）by xuan
     * Support choice style
 * new features：1.0.6（2020.11.10）by xuan
-        * support continue and break for loop
+    * support continue and break for loop
+* bugfix：1.0.7（2020.12.10）by xuan
+    * support newest idea203 version
 
 # Appendix
 idea plugin development learning materials
