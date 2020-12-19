@@ -81,7 +81,12 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
         textArea.setCodeFoldingEnabled(true);
         textArea.setFont(new Font("SF Mono", Font.PLAIN, 13));
         textArea.setUseFocusableTips(true);
+        textArea.requestFocusInWindow();
+        textArea.setMarkOccurrences(true);
         textArea.setAutoscrolls(true);
+        textArea.setAutoIndentEnabled(true);
+        textArea.setUseSelectedTextColor(true);
+        textArea.setEditable(true);
         // Different styles of presentation, different, to close the editor in order to take effect
         if (UIManager.getLookAndFeel().getName().contains(UI_THEME)) {
             try {

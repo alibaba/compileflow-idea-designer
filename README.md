@@ -67,7 +67,7 @@ Restart the IDE. View the .bpm file and it will take effect;
 # Plug-in tutorial
 New BPM file
 
-STEP1: It can be created in the resources directory, select the resources directory and right-click [Create New Bpm File]. For example, I created it in the bpm directory of resources.
+STEP1: It can be created in the resources directory, select the resources directory and right-click **Create New Bpm File**. For example, I created it in the bpm directory of resources.
 ![](doc/image/designer_1.png)
 
 STEP2: Enter the file name, for example: hello inside the red box
@@ -80,7 +80,7 @@ STEP3: The plug-in will generate the hello.bpm file by default, which is a simpl
 
 Visual editing
 
-STEP1: You can select [process-flow] below for visual editing, drag the node from the left to the canvas, or select the node and drag it.
+STEP1: You can select **process-flow** below for visual editing, drag the node from the left to the canvas, or select the node and drag it.
 ![](doc/image/designer_4.png)
 
 STEP2: Double-click the blank space to edit global parameters
@@ -92,12 +92,12 @@ STEP3: Double-click the node to edit the node parameters (drag and drop to adjus
 
 Java code preview
 
-STEP1: You can select [java code] below to preview the Java code. Syntax highlighting
+STEP1: You can select **java code** below to preview the Java code. Syntax highlighting
 ![](doc/image/pre_javacode.png)
 
 Create test code
 
-STEP1: Right-click the file and click [Create New Bpm JUnit Test] to automatically generate test classes
+STEP1: Right-click the file and click **Create New Bpm JUnit Test** to automatically generate test classes
 ![](doc/image/designer_7.png)
 
 STEP2: Go to the specified path to view the generated test class (modify the input parameters and run the entire demo to complete)
