@@ -26,6 +26,7 @@ import com.google.gson.Gson;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.highlighter.JavaFileType;
 import com.intellij.ide.structureView.StructureViewBuilder;
+import com.intellij.ide.ui.UISettings;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileEditor.*;
@@ -53,6 +54,7 @@ import java.beans.PropertyChangeListener;
 import java.io.IOException;
 
 /**
+ *
  * JavaSourceFileEditor
  *
  * @author wuxiang
@@ -79,7 +81,6 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
         RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
         textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         textArea.setCodeFoldingEnabled(true);
-        textArea.setFont(new Font("SF Mono", Font.PLAIN, 13));
         textArea.setUseFocusableTips(true);
         textArea.requestFocusInWindow();
         textArea.setMarkOccurrences(true);
@@ -106,6 +107,11 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
             }
         }
 
+        // 从IDE 字体中直接获取
+        UISettings settingsManager = UISettings.getInstance();
+        int fontSize = settingsManager.getFontSize();
+        Font font = new Font("JetBrains Mono NL", Font.PLAIN, fontSize+1);
+        textArea.setFont(font);
         RTextScrollPane sp = new RTextScrollPane(textArea);
         mainPanel.add(sp);
 
