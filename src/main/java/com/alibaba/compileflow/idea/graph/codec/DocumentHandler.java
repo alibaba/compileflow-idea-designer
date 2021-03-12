@@ -60,7 +60,7 @@ public class DocumentHandler {
             if (text.length() == 0) {
                 text = FileUtil.getInitBpmText(file.getNameWithoutExtension());
 
-                final Document myDocumentFinal = this.document;
+                final Document myDocumentFJavaSourceFileEditorinal = this.document;
                 final String textFinal = text;
                 ApplicationManager.getApplication().runWriteAction(() -> {
                     myDocumentFinal.setText(textFinal);
