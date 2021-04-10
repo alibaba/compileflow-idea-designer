@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.alibaba.compileflow.designer</id>
     <name>compileflow idea设计器</name>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <vendor email="xuan.xa@alibaba-inc.com" url="https://github.com/alibaba/compileflow-idea-designer">阿里巴巴</vendor>
 
     <description><![CDATA[
@@ -36,13 +36,13 @@
 
     </extensions>
 
-    <project-components>
-        <component>
-            <implementation-class>com.alibaba.compileflow.idea.plugin.component.ToolWindowComponent
-            </implementation-class>
-            <headless-implementation-class/>
-        </component>
-    </project-components>
+    <!--<project-components>-->
+        <!--<component>-->
+            <!--<implementation-class>com.alibaba.compileflow.idea.plugin.component.ToolWindowComponent-->
+            <!--</implementation-class>-->
+            <!--<headless-implementation-class/>-->
+        <!--</component>-->
+    <!--</project-components>-->
 
     <actions>
         <!-- Add your actions here -->

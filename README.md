@@ -7,8 +7,8 @@ compileflow-idea-designer is an Idea plug-in. It allows you to easily complete t
 
 Compileflow engine open source address: https://github.com/alibaba/compileflow
 
-* Download the latest plug-in installation package, download address::[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.7.zip)
-If you are the 2020 version of idea and above, please download this:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.7.for.2020.up.zip)
+* Download the latest plug-in installation package:
+https://github.com/compileflow/compileflow-designer-upgrade
 
 # Description
 ## Main features
@@ -102,24 +102,6 @@ STEP1: Right-click the file and click **Create New Bpm JUnit Test** to automatic
 
 STEP2: Go to the specified path to view the generated test class (modify the input parameters and run the entire demo to complete)
 ![](doc/image/designer_8.png)
-
-# Changelog
-* First release version: 1.0.0 (2020.08.16) by xuan
-* Optimization function: 1.0.1 (2020.08.17) by xuan
-    * Friendly tips on how to effectively set node attributes in drawing mode and editing mode
-    * Add canvas zoom in and zoom out function
-* Optimization function: 1.0.2（2020.09.07）by xuan
-    * Node use English
-* bugfix：1.0.3（2020.10.20）by xuan
-    * Fixed preview Javacode not showing
-* bugfix：1.0.4（2020.10.26）by xuan
-    * Fixed the problem that the build test class could not find and the class did not correspond
-* new features：1.0.5（2020.11.06）by xuan
-    * Support choice style
-* new features：1.0.6（2020.11.10）by xuan
-    * support continue and break for loop
-* bugfix：1.0.7（2020.12.10）by xuan
-    * support newest idea203 version
 
 # Appendix
 idea plugin development learning materials

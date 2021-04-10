@@ -7,8 +7,8 @@
 
 * compileflow引擎开源地址：https://github.com/alibaba/compileflow
 
-* 插件最新安装包下载，下载地址:[compileflow-idea-designer.zip](doc/designer/compileflow-idea-designer-1.0.7.zip)
-如果你是idea的2020版本及以上的，请下载这个:[compileflow-idea-designer.for.2020.up.zip](doc/designer/compileflow-idea-designer-1.0.7.for.2020.up.zip)
+* 插件最新安装包下载，下载地址:
+https://github.com/compileflow/compileflow-designer-upgrade
 
 # 简介
 
@@ -100,7 +100,9 @@
 * 新特性：1.0.6（2020.11.10）by xuan
         * 支持循环节点中的continue节点和break节点
 * bugfix：1.0.7（2020.12.10）by xuan
-        * 支持最新idea203版本      
+        * 支持2020.3版本安装      
+* bugfix：1.0.8（2021.4.10）by xuan
+        * 支持2021.1版本安装
 
       
       
@@ -117,13 +119,6 @@
 6. 入门demo：https://github.com/xuan698400/compileflow_demo
 7. 我们能从InteliJ IDEA中学到什么？ https://developer.aliyun.com/article/696827
 8. 编程10年感悟：https://www.infoq.cn/article/YD-tGFJPdGMVluYIkcc0 
-
-### 版本升级备注
-
-1. build.gradle 修改version和changeNotes
-2. plugin.xml 修改version
-3. README.md 修改记录Changelog
-4. CompileFlow.java 修改version
 
 # 欢迎联系我们
 
