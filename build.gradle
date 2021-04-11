@@ -8,7 +8,7 @@ plugins {
 group 'com.alibaba.compileflow.designer'
 version '1.0.8'
 
-sourceCompatibility = 15
+sourceCompatibility = 1.8
 
 repositories {
     flatDir {
