@@ -21,12 +21,35 @@
         <item key="node.name.auto" value="自动节点"/>
         <item key="node.name.script" value="脚本节点"/>
         <item key="node.name.decision" value="判断节点"/>
-        <item key="node.name.sub" value="子流程节点"/>
+        <item key="node.name.sub" value="子流程"/>
         <item key="node.name.user" value="用户节点"/>
         <item key="node.name.wait" value="等待节点"/>
         <item key="node.name.note" value="注释节点"/>
         <item key="node.name.loop" value="循环节点"/>
-        <item key="node.name.continue" value="中断节点"/>
-        <item key="node.name.break" value="跳出节点"/>
+        <item key="node.name.continue" value="循环中断"/>
+        <item key="node.name.break" value="循环跳出"/>
+
+        <item key="editor.text" value="文本"/>
+        <item key="editor.java.code" value="Java代码"/>
+        <item key="editor.process.flow" value="流程设计"/>
+    </organization>
+
+    <organization name="en">
+        <item key="node.name.start" value="start"/>
+        <item key="node.name.end" value="end"/>
+        <item key="node.name.auto" value="auto"/>
+        <item key="node.name.script" value="script"/>
+        <item key="node.name.decision" value="decision"/>
+        <item key="node.name.sub" value="subBpm"/>
+        <item key="node.name.user" value="user"/>
+        <item key="node.name.wait" value="wait"/>
+        <item key="node.name.note" value="note"/>
+        <item key="node.name.loop" value="loop"/>
+        <item key="node.name.continue" value="continue"/>
+        <item key="node.name.break" value="break"/>
+
+        <item key="editor.text" value="Text"/>
+        <item key="editor.java.code" value="JavaCode"/>
+        <item key="editor.process.flow" value="ProcessFlow"/>
     </organization>
 </lang>

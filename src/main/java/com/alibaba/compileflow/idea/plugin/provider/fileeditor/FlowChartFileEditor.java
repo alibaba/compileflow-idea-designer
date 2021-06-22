@@ -22,6 +22,7 @@ import com.alibaba.compileflow.idea.graph.mxgraph.GraphComponent;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
 import com.alibaba.compileflow.idea.graph.mxgraph.GraphModel;
 import com.alibaba.compileflow.idea.graph.styles.StyleSheetLoader;
+import com.alibaba.compileflow.idea.plugin.lang.Lang;
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -86,7 +87,7 @@ public class FlowChartFileEditor extends UserDataHolderBase implements FileEdito
     @NotNull
     @Override
     public String getName() {
-        return LanguageConstants.TAB_CHART_NAME;
+        return Lang.getString("editor.process.flow");
     }
 
     @Override

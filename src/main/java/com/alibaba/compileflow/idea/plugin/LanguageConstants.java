@@ -6,9 +6,6 @@ package com.alibaba.compileflow.idea.plugin;
  */
 public interface LanguageConstants {
 
-    String TAB_CODE_NAME = "java code";
-    String TAB_CHART_NAME = "process-flow";
-
     String INPUT_DIALOG_TITLE = "Tips";
     String CREATE_TEST_CLASS_MESSAGE
         = "The test class will be created below position. \nIf class already exists, it will be covered.";

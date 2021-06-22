@@ -40,7 +40,6 @@ allprojects {
         compile name: 'miglayout-core-5.3-SNAPSHOT'
         compile name: 'miglayout-swing-5.3-SNAPSHOT'
         compile name: 'mxgraph-all'
-        compile name: 'rsyntaxtextarea-3.1.1'
         compile name: 'compileflow-1.0.0-jar-with-dependencies'
         compile name: 'logback-core-1.1.8'
         compile name: 'logback-classic-1.1.8'

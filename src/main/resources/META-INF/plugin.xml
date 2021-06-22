@@ -36,14 +36,6 @@
 
     </extensions>
 
-    <!--<project-components>-->
-        <!--<component>-->
-            <!--<implementation-class>com.alibaba.compileflow.idea.plugin.component.ToolWindowComponent-->
-            <!--</implementation-class>-->
-            <!--<headless-implementation-class/>-->
-        <!--</component>-->
-    <!--</project-components>-->
-
     <actions>
         <!-- Add your actions here -->
         <action id="CompileflowFile"

@@ -16,12 +16,12 @@ import com.alibaba.compileflow.idea.graph.util.xml.XmlUtil;
 public class Lang {
     private static final String LANG_PATH = "/com/alibaba/compileflow/idea/plugin/lang/lang.xml";
 
-    private static final String LANG_KEY_DEFAULT = "default";
     private static final String LANG_KEY_ZH_CN = "zh_CN";
+    private static final String LANG_KEY_EN = "en";
 
     private static final Map<String, Map<String, String>> LANG_MAP = new HashMap<>();
 
-    private static String CURRENT_LANG = LANG_KEY_DEFAULT;
+    private static String CURRENT_LANG = LANG_KEY_EN;
 
     static {
         loadLang();
@@ -60,7 +60,7 @@ public class Lang {
             value = itemMap.get(key);
         }
         if (null == value) {
-            Map<String, String> defaultItemMap = LANG_MAP.get(LANG_KEY_DEFAULT);
+            Map<String, String> defaultItemMap = LANG_MAP.get(LANG_KEY_EN);
             if (null != defaultItemMap) {
                 value = defaultItemMap.get(key);
             }
