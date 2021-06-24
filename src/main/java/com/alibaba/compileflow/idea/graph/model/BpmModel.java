@@ -31,6 +31,7 @@ public class BpmModel {
 
     public static String BPM_DEFINE_PROCESS = "process";
     public static String BPM_DEFINE_STATELESS_WORKFLOW = "statelessWorkflow";
+    public static String BPM_DEFINE_STATEFULL = "stateful";
 
     private String code;
     private String name;

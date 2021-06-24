@@ -21,6 +21,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
+import com.alibaba.compileflow.engine.StatefulProcessEngine;
 import com.alibaba.compileflow.engine.common.CompileFlowException;
 import com.alibaba.compileflow.engine.common.DirectedGraph;
 import com.alibaba.compileflow.engine.definition.common.EndElement;
@@ -69,10 +71,10 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
         sortTransition(tbbpmModel);
 
         AbstractProcessRuntime<TbbpmModel> processRuntime;
-        if (BpmModel.BPM_DEFINE_STATELESS_WORKFLOW.equals(bpmModel.getType())) {
-            processRuntime = TbbpmStatelessProcessRuntime.of(tbbpmModel);
-        } else {
+        if (BpmModel.BPM_DEFINE_STATEFULL.equals(bpmModel.getType())) {
             processRuntime = TbbpmStatefulProcessRuntime.of(tbbpmModel);
+        } else {
+            processRuntime = TbbpmStatelessProcessRuntime.of(tbbpmModel);
         }
 
         processRuntime.init();

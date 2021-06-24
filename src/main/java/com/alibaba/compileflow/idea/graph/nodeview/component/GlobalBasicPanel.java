@@ -86,6 +86,7 @@ public class GlobalBasicPanel extends JPanel {
 
         comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_PROCESS, 0);
         comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_STATELESS_WORKFLOW, 1);
+        comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_STATEFULL, 1);
         typeBox.setModel(comboBoxModel);
     }
 

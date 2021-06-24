@@ -42,7 +42,8 @@ public class SubBpmCodeParamsPanel extends JPanel {
      */
     private JLabel typeLabel = new JLabel("Type:");
     private ComboBox<String> typeComboBox = new ComboBox<>(
-        new String[] {BpmModel.BPM_DEFINE_PROCESS, BpmModel.BPM_DEFINE_STATELESS_WORKFLOW}, 100);
+        new String[] {BpmModel.BPM_DEFINE_PROCESS, BpmModel.BPM_DEFINE_STATELESS_WORKFLOW,
+            BpmModel.BPM_DEFINE_STATEFULL}, 100);
     /**
      * waitForCompletion
      */
