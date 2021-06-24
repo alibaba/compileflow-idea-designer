@@ -85,9 +85,7 @@ public class GlobalBasicPanel extends JPanel {
         this.add(descriptionField, "span, growx, wrap");
 
         comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_PROCESS, 0);
-        comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_STATEMACHINE, 1);
-        comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_WORKFLOW, 2);
-        comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_STATELESS_WORKFLOW, 3);
+        comboBoxModel.insertElementAt(BpmModel.BPM_DEFINE_STATELESS_WORKFLOW, 1);
         typeBox.setModel(comboBoxModel);
     }
 

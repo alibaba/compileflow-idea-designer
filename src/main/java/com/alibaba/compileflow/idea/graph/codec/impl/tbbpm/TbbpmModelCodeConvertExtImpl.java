@@ -22,14 +22,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.alibaba.compileflow.engine.common.CompileFlowException;
+import com.alibaba.compileflow.engine.common.DirectedGraph;
 import com.alibaba.compileflow.engine.definition.common.EndElement;
 import com.alibaba.compileflow.engine.definition.common.FlowModel;
 import com.alibaba.compileflow.engine.definition.common.TransitionNode;
 import com.alibaba.compileflow.engine.definition.common.TransitionSupport;
 import com.alibaba.compileflow.engine.definition.tbbpm.TbbpmModel;
-import com.alibaba.compileflow.engine.process.impl.DirectedGraph;
 import com.alibaba.compileflow.engine.process.preruntime.converter.impl.TbbpmModelConverter;
 import com.alibaba.compileflow.engine.runtime.impl.AbstractProcessRuntime;
+import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatefulProcessRuntime;
 import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatelessProcessRuntime;
 import com.alibaba.compileflow.idea.graph.util.Constants;
 import com.alibaba.compileflow.idea.graph.codec.ModelCodeConvertExt;
@@ -67,7 +68,13 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
         checkContinuous(tbbpmModel);
         sortTransition(tbbpmModel);
 
-        AbstractProcessRuntime<TbbpmModel> processRuntime = TbbpmStatelessProcessRuntime.of(tbbpmModel);
+        AbstractProcessRuntime<TbbpmModel> processRuntime;
+        if (BpmModel.BPM_DEFINE_STATELESS_WORKFLOW.equals(bpmModel.getType())) {
+            processRuntime = TbbpmStatelessProcessRuntime.of(tbbpmModel);
+        } else {
+            processRuntime = TbbpmStatefulProcessRuntime.of(tbbpmModel);
+        }
+
         processRuntime.init();
         return processRuntime;
     }

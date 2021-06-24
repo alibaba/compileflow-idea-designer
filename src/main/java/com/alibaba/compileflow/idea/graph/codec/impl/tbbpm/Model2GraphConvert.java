@@ -21,6 +21,7 @@ import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
 import com.alibaba.compileflow.idea.graph.model.EdgeModel;
 import com.alibaba.compileflow.idea.graph.model.TransitionModel;
 import com.alibaba.compileflow.idea.graph.model.GeolocationModel;
+import com.alibaba.compileflow.idea.graph.model.WaitEventModel;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
 import com.alibaba.compileflow.idea.graph.model.BpmModel;
 import com.alibaba.compileflow.idea.graph.model.AutoTaskNodeModel;
@@ -200,6 +201,10 @@ public class Model2GraphConvert {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
                 g1.h, "break");
+        } else if (model instanceof WaitEventModel) {
+            GeolocationModel g1 = new GeolocationModel(model.getG());
+            v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,
+                g1.h, "waitEvent");
         } else {
             GeolocationModel g1 = new GeolocationModel(model.getG());
             v = graph.insertVertex(parent, null, model, g1.x, g1.y, g1.w,

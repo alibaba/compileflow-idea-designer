@@ -18,6 +18,7 @@ package com.alibaba.compileflow.idea.graph.nodeview;
 
 import com.alibaba.compileflow.idea.graph.model.BreakNodeModel;
 import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
+import com.alibaba.compileflow.idea.graph.model.WaitEventModel;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.AutoTaskDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.BreakDialog;
@@ -28,6 +29,7 @@ import com.alibaba.compileflow.idea.graph.nodeview.dialog.NoteDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.ScriptTaskDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.SubBpmDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.UserTaskDialog;
+import com.alibaba.compileflow.idea.graph.nodeview.dialog.WaitEventDialog;
 import com.alibaba.compileflow.idea.graph.nodeview.dialog.WaitTaskDialog;
 import com.alibaba.compileflow.idea.graph.model.AutoTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.DecisionNodeModel;
@@ -54,7 +56,7 @@ public class NodeEditDialogFactory {
 
     public static DialogWrapper getDialog(Project project, mxCell cell, Graph graph) {
 
-        if (null == cell ||  cell.getValue() == null) {
+        if (null == cell || cell.getValue() == null) {
             return null;
         }
 
@@ -92,12 +94,16 @@ public class NodeEditDialogFactory {
             return new NoActionDialog(project, cell, graph);
         }
 
-        if(node instanceof ContinueNodeModel){
+        if (node instanceof ContinueNodeModel) {
             return new ContinueDialog(project, cell, graph);
         }
 
-        if(node instanceof BreakNodeModel){
+        if (node instanceof BreakNodeModel) {
             return new BreakDialog(project, cell, graph);
+        }
+
+        if (node instanceof WaitEventModel) {
+            return new WaitEventDialog(project, cell, graph);
         }
 
         throw new IllegalStateException("node can find model. node class:" + node.getClass());

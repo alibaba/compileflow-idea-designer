@@ -50,6 +50,8 @@ public class NodeCloneFactory {
             newModel = ContinueNodeModel.of();
         } else if (oldModel instanceof BreakNodeModel) {
             newModel = BreakNodeModel.of();
+        } else if (oldModel instanceof WaitEventModel) {
+            newModel = WaitEventModel.of();
         } else {
             newModel = AutoTaskNodeModel.of();
         }

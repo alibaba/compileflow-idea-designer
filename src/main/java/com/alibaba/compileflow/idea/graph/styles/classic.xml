@@ -195,4 +195,23 @@
         <add as="imageHeight" value="15"/>
         <add as="imageVerticalAlign" value="top"/>
     </add>
+
+    <add as="waitEvent">
+        <add as="image" value="/com/alibaba/compileflow/idea/graph/images/palette/waitEvent.png"/>
+
+        <add as="shape" value="label"/>
+        <add as="type" value=""/>
+        <add as="shadow" value="1"/>
+        <add as="perimeter" value="rectanglePerimeter"/>
+        <add as="fontSize" value="14"/>
+        <add as="align" value="center"/>
+        <add as="verticalAlign" value="middle"/>
+        <add as="spacingTop" value="2"/>
+        <add as="fontColor" value="#073642"/>
+        <add as="strokeColor" value="#FFFFFF"/>
+        <add as="fillColor" value="#f0f5ff"/>
+        <add as="imageWidth" value="15"/>
+        <add as="imageHeight" value="15"/>
+        <add as="imageVerticalAlign" value="top"/>
+    </add>
 </Stylesheet>

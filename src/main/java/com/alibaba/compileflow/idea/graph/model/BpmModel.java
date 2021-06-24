@@ -30,8 +30,6 @@ import com.alibaba.compileflow.idea.graph.util.StringUtil;
 public class BpmModel {
 
     public static String BPM_DEFINE_PROCESS = "process";
-    public static String BPM_DEFINE_STATEMACHINE = "stateMachine";
-    public static String BPM_DEFINE_WORKFLOW = "workflow";
     public static String BPM_DEFINE_STATELESS_WORKFLOW = "statelessWorkflow";
 
     private String code;

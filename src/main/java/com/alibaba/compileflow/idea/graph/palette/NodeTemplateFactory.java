@@ -21,6 +21,7 @@ import java.util.List;
 
 import com.alibaba.compileflow.idea.graph.model.BreakNodeModel;
 import com.alibaba.compileflow.idea.graph.model.ContinueNodeModel;
+import com.alibaba.compileflow.idea.graph.model.WaitEventModel;
 import com.alibaba.compileflow.idea.graph.util.Constants;
 import com.alibaba.compileflow.idea.graph.model.LoopProcessNodeModel;
 import com.alibaba.compileflow.idea.graph.palette.EditorPaletteModel.Template;
@@ -150,7 +151,7 @@ public class NodeTemplateFactory {
         loop.value = LoopProcessNodeModel.of();
         ((LoopProcessNodeModel)loop.value).setName(loop.name);
         BPM_TEMPLATE_LIST.add(loop);
-        //loop
+        //continuee
         Template continuee = new Template();
         continuee.name = Lang.getString("node.name.continue");
         continuee.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/continue.png";
@@ -160,6 +161,7 @@ public class NodeTemplateFactory {
         continuee.value = ContinueNodeModel.of();
         ((ContinueNodeModel)continuee.value).setName(continuee.name);
         BPM_TEMPLATE_LIST.add(continuee);
+        //breakk
         Template breakk = new Template();
         breakk.name = Lang.getString("node.name.break");
         breakk.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/break.png";
@@ -169,6 +171,16 @@ public class NodeTemplateFactory {
         breakk.value = BreakNodeModel.of();
         ((BreakNodeModel)breakk.value).setName(breakk.name);
         BPM_TEMPLATE_LIST.add(breakk);
+        //
+        Template waitEvent = new Template();
+        waitEvent.name = Lang.getString("node.name.wait.event");
+        waitEvent.iconUrl = "/com/alibaba/compileflow/idea/graph/images/palette/waitEvent.png";
+        waitEvent.style = "waitEvent";
+        waitEvent.width = 80;
+        waitEvent.height = 40;
+        waitEvent.value = WaitEventModel.of();
+        ((WaitEventModel)waitEvent.value).setName(waitEvent.name);
+        BPM_TEMPLATE_LIST.add(waitEvent);
     }
 
     static {

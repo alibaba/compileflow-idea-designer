@@ -33,6 +33,7 @@ import com.alibaba.compileflow.engine.definition.tbbpm.ScriptTaskNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.StartNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.SubBpmNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.Transition;
+import com.alibaba.compileflow.engine.definition.tbbpm.WaitEventNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.WaitTaskNode;
 import com.alibaba.compileflow.idea.graph.model.AutoTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.BaseNodeModel;
@@ -45,6 +46,7 @@ import com.alibaba.compileflow.idea.graph.model.NoteNodeModel;
 import com.alibaba.compileflow.idea.graph.model.ScriptTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.StartNodeModel;
 import com.alibaba.compileflow.idea.graph.model.SubBpmNodeModel;
+import com.alibaba.compileflow.idea.graph.model.WaitEventModel;
 import com.alibaba.compileflow.idea.graph.model.WaitTaskNodeModel;
 
 /**
@@ -164,6 +166,12 @@ public class NodeConvert {
             fillToNode(breakNode, breakNodeModel);
             breakNode.setExpression(breakNodeModel.getExpression());
             return breakNode;
+        } else if (model instanceof WaitEventModel) {
+            WaitEventModel waitEventModel = (WaitEventModel)model;
+            WaitEventNode waitEventNode = new WaitEventNode();
+            fillToNode(waitEventNode, waitEventModel);
+            waitEventNode.setEventName(waitEventModel.getEventName());
+            return waitEventNode;
         }
 
         return null;
@@ -263,11 +271,17 @@ public class NodeConvert {
             fillToModel(model, continueNode);
             model.setExpression(continueNode.getExpression());
             return model;
-        } else if(node instanceof BreakNode){
+        } else if (node instanceof BreakNode) {
             BreakNode breakNode = (BreakNode)node;
             BreakNodeModel model = BreakNodeModel.of();
             fillToModel(model, breakNode);
             model.setExpression(breakNode.getExpression());
+            return model;
+        } else if (node instanceof WaitEventNode) {
+            WaitEventNode waitEventNode = (WaitEventNode)node;
+            WaitEventModel model = WaitEventModel.of();
+            fillToModel(model, waitEventNode);
+            model.setEventName(waitEventNode.getEventName());
             return model;
         }
 
