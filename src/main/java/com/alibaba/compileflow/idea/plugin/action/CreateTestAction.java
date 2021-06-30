@@ -115,7 +115,7 @@ public class CreateTestAction extends AnAction {
             return;
         }
 
-        String testCode = ModelConvertFactory.getModelCodeConvertExt(vf.getExtension()).getJavaTestCode(bpmModel);
+        String testCode = ModelConvertFactory.getModelCodeConvertExt(vf.getExtension()).getJavaTestCode(bpmModel, bpmContent);
         if (null != testCode) {
             FileUtil.writeStringToFile(testFile, testCode);
         }

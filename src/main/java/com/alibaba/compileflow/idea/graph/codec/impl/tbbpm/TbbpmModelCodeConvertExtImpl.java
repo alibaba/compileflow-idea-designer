@@ -21,8 +21,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.alibaba.compileflow.engine.ProcessEngineFactory;
-import com.alibaba.compileflow.engine.StatefulProcessEngine;
 import com.alibaba.compileflow.engine.common.CompileFlowException;
 import com.alibaba.compileflow.engine.common.DirectedGraph;
 import com.alibaba.compileflow.engine.definition.common.EndElement;
@@ -34,10 +32,7 @@ import com.alibaba.compileflow.engine.process.preruntime.converter.impl.TbbpmMod
 import com.alibaba.compileflow.engine.runtime.impl.AbstractProcessRuntime;
 import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatefulProcessRuntime;
 import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatelessProcessRuntime;
-import com.alibaba.compileflow.idea.graph.util.Constants;
 import com.alibaba.compileflow.idea.graph.codec.ModelCodeConvertExt;
-import com.alibaba.compileflow.idea.graph.codec.ModelConvertFactory;
-import com.alibaba.compileflow.idea.graph.codec.ModelXmlConvertExt;
 import com.alibaba.compileflow.idea.graph.model.BpmModel;
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -49,19 +44,16 @@ import org.apache.commons.collections4.CollectionUtils;
 public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
 
     @Override
-    public String getJavaTestCode(BpmModel bpmModel) {
-        return buildProcessRuntime(bpmModel).generateTestCode();
+    public String getJavaTestCode(BpmModel bpmModel, String xml) {
+        return buildProcessRuntime(bpmModel, xml).generateTestCode();
     }
 
     @Override
-    public String getJavaCode(BpmModel bpmModel) {
-        return buildProcessRuntime(bpmModel).generateJavaCode();
+    public String getJavaCode(BpmModel bpmModel, String xml) {
+        return buildProcessRuntime(bpmModel, xml).generateJavaCode();
     }
 
-    private AbstractProcessRuntime<TbbpmModel> buildProcessRuntime(BpmModel bpmModel) {
-        ModelXmlConvertExt modelXmlConvertExt = ModelConvertFactory.getModelXmlConvertExt(Constants.PROTOCOL_BPM);
-        String xml = modelXmlConvertExt.toXml(bpmModel);
-
+    private AbstractProcessRuntime<TbbpmModel> buildProcessRuntime(BpmModel bpmModel, String xml) {
         //to tbbpmModel
         StringFlowStreamSource stringFlowStreamSource = new StringFlowStreamSource(xml);
         TbbpmModel tbbpmModel = TbbpmModelConverter.getInstance().convertToModel(stringFlowStreamSource);

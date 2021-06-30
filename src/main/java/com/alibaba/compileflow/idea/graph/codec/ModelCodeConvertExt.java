@@ -24,8 +24,8 @@ import com.alibaba.compileflow.idea.graph.model.BpmModel;
  */
 public interface ModelCodeConvertExt {
 
-    String getJavaTestCode(BpmModel bpmModel);
+    String getJavaTestCode(BpmModel bpmModel, String xml);
 
-    String getJavaCode(BpmModel bpmModel);
+    String getJavaCode(BpmModel bpmModel, String xml);
 
 }

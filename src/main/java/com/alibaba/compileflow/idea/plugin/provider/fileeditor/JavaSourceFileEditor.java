@@ -44,18 +44,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiFileFactory;
 import com.intellij.psi.xml.XmlFile;
 import com.intellij.util.messages.MessageBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * show the javacode
+ *
  * @author xuan
  * @since 2021-06-22
  */
 public class JavaSourceFileEditor extends UserDataHolderBase implements FileEditor {
+    private static final String LINE_BREAK = "\n";
 
     private static final Logger logger = Logger.getInstance(JavaSourceFileEditor.class);
     private Project project;
@@ -82,10 +83,8 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
     }
 
     private void loadJavaCode() {
-
         String javaCode;
         BpmModel bpmModel = null;
-        String bpmCode = "default test";
         try {
             // Empty file
             if (xmlFile.getText().length() == 0) {
@@ -94,35 +93,31 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
                 bpmModel = ModelConvertFactory.getModelXmlConvertExt(xmlFile.getVirtualFile().getExtension()).toModel(
                     xmlFile.getText());
                 javaCode = ModelConvertFactory.getModelCodeConvertExt(xmlFile.getVirtualFile().getExtension())
-                    .getJavaCode(
-                        bpmModel);
-                bpmCode = bpmModel.getCode();
+                    .getJavaCode(bpmModel, xmlFile.getText());
             }
         } catch (Throwable e) {
             logger.error(e);
-            javaCode = "//Bpm file is illegal. Case:";
-            javaCode += "\n";
-            javaCode += "//" + e.getMessage();
 
-            javaCode += "\n";
-            Gson gson = new Gson();
-            javaCode += "//" + gson.toJson(e);
+            javaCode = "//Bpm file is illegal. Message:";
+            javaCode += LINE_BREAK;
+            javaCode += e.getMessage();
+            javaCode += LINE_BREAK;
 
-            javaCode += "\n";
-            javaCode += "\n";
+            javaCode += "//Bpm file is illegal. Throwable:";
+            javaCode += LINE_BREAK;
+            javaCode += new Gson().toJson(e);
+            javaCode += LINE_BREAK;
 
             javaCode += "//Ops... I found some problems. Please confirm:";
-            javaCode += "\n";
+            javaCode += LINE_BREAK;
             javaCode += ModelCheckerMgr.check(bpmModel);
         }
 
         if (null == javaCode) {
-            javaCode = "//Just not support!!!";
+            javaCode = "Just not support!!!";
         }
 
-        PsiFile f = PsiFileFactory.getInstance(project).createFileFromText(bpmCode, JavaFileType.INSTANCE, javaCode);
-
-        refreshText(f.getViewProvider().getContents().toString());
+        refreshText(javaCode);
     }
 
     private void refreshText(String text) {
