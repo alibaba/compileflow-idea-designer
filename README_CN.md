@@ -103,6 +103,9 @@ https://github.com/compileflow/compileflow-designer-upgrade
         * 支持2020.3版本安装      
 * bugfix：1.0.8（2021.4.10）by xuan
         * 支持2021.1版本安装
+* 新特性：1.0.9（2021.7.9）by xuan
+        * 支持等待节点
+        * 优化javacode的展示
 
       
       
