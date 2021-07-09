@@ -35,8 +35,6 @@ import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatelessProcessRuntime;
 import com.alibaba.compileflow.idea.graph.codec.ModelCodeConvertExt;
 import com.alibaba.compileflow.idea.graph.model.BpmModel;
 
-import org.apache.commons.collections4.CollectionUtils;
-
 /**
  * @author xuan
  * @since 2020/5/21
@@ -82,13 +80,13 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
         DirectedGraph directedGraph = new DirectedGraph();
         for (TransitionNode node : tbbpmModel.getAllNodes()) {
             List<TransitionNode> outgoingNodes = node.getOutgoingNodes();
-            if (CollectionUtils.isNotEmpty(outgoingNodes)) {
+            if (isNotEmpty(outgoingNodes)) {
                 outgoingNodes.forEach(
                     outgoingNode -> directedGraph.add(DirectedGraph.Edge.of(node, outgoingNode)));
             }
         }
         List<TransitionNode> cyclicVertexList = directedGraph.findCyclicVertexList();
-        if (CollectionUtils.isNotEmpty(cyclicVertexList)) {
+        if (isNotEmpty(cyclicVertexList)) {
             throw new CompileFlowException("Cyclic nodes found in flow " + tbbpmModel.getCode()
                 + " check node [" + cyclicVertexList.stream().map(TransitionNode::getId)
                 .collect(Collectors.joining(",")) + "]");
@@ -106,7 +104,7 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
             return;
         }
         List<TransitionNode> outgoingNodes = node.getOutgoingNodes();
-        if (CollectionUtils.isEmpty(outgoingNodes)) {
+        if (isEmpty(outgoingNodes)) {
             throw new CompileFlowException("Flow should end with an end node " + flowModel);
         }
 
@@ -115,6 +113,14 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
                 checkContinuous(outgoingNode, visitedNodes, flowModel);
             }
         }
+    }
+
+    private <T> boolean isEmpty(List<T> list) {
+        return null == list || list.isEmpty();
+    }
+
+    private <T> boolean isNotEmpty(List<T> list) {
+        return !isEmpty(list);
     }
 
 }
