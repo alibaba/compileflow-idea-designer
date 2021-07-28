@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.9'
+version '1.0.10'
 
 sourceCompatibility = 1.8
 
@@ -50,9 +50,9 @@ allprojects {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-//    version '2018.2'
-    version '2020.1'
-    plugins = ['java']
+    version '2018.2'
+//    version '2020.1'
+//    plugins = ['java']
 }
 patchPluginXml {
     changeNotes """
@@ -85,12 +85,15 @@ patchPluginXml {
       <em>1.0.8 bugfix</em><br>
       1. 支持2021.1版本安装  <br>
       
-      <em>1.0.8 features</em><br>
+      <em>1.0.9 features</em><br>
       1. 支持等待节点  <br>
       2. 优化javacode展示  <br>
+      
+      <em>1.0.10 features</em><br>
+      1. 支持2021.2版本安装  <br>
       
       """
 
     sinceBuild '162.*'
-    untilBuild '211.*'
+    untilBuild '212.*'
 }
