@@ -30,6 +30,7 @@ import com.alibaba.compileflow.idea.graph.model.TransitionModel;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
 import com.alibaba.compileflow.idea.graph.palette.EditorPalette;
 import com.alibaba.compileflow.idea.graph.toolbar.FlowChartToolBar;
+import com.alibaba.compileflow.idea.graph.util.Initializer;
 import com.alibaba.compileflow.idea.graph.util.SwitchModel;
 import com.alibaba.compileflow.idea.graph.palette.EditorPaletteModel;
 import com.alibaba.compileflow.idea.graph.model.BaseNodeModel;
@@ -269,6 +270,8 @@ public class FlowChartComponent extends JPanel implements ModuleProvider {
 
         installHandlers();
         installListeners();
+
+        Initializer.init();
     }
 
     private void installToolBar() {

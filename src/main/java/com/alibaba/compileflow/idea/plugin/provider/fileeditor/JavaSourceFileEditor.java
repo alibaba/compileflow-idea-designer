@@ -44,7 +44,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.xml.XmlFile;
+import com.intellij.psi.PsiFile;
 import com.intellij.util.messages.MessageBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -61,12 +61,12 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
     private static final Logger logger = Logger.getInstance(JavaSourceFileEditor.class);
     private Project project;
     private Editor editor;
-    private XmlFile xmlFile;
+    private PsiFile psiFile;
     private Document document;
 
-    public JavaSourceFileEditor(final Project project, XmlFile xmlFile) {
+    public JavaSourceFileEditor(final Project project, PsiFile psiFile) {
         this.project = project;
-        this.xmlFile = xmlFile;
+        this.psiFile = psiFile;
         this.document = EditorFactory.getInstance().createDocument("");
         this.editor = EditorFactory.getInstance().createEditor(document, project, JavaFileType.INSTANCE, true);
 
@@ -87,13 +87,13 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
         BpmModel bpmModel = null;
         try {
             // Empty file
-            if (xmlFile.getText().length() == 0) {
+            if (psiFile.getText().length() == 0) {
                 javaCode = "// Please draw bpm flow first, thanks!!!";
             } else {
-                bpmModel = ModelConvertFactory.getModelXmlConvertExt(xmlFile.getVirtualFile().getExtension()).toModel(
-                    xmlFile.getText());
-                javaCode = ModelConvertFactory.getModelCodeConvertExt(xmlFile.getVirtualFile().getExtension())
-                    .getJavaCode(bpmModel, xmlFile.getText());
+                bpmModel = ModelConvertFactory.getModelXmlConvertExt(psiFile.getVirtualFile().getExtension()).toModel(
+                    psiFile.getText());
+                javaCode = ModelConvertFactory.getModelCodeConvertExt(psiFile.getVirtualFile().getExtension())
+                    .getJavaCode(bpmModel, psiFile.getText());
             }
         } catch (Throwable e) {
             logger.error(e);
@@ -220,7 +220,7 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
     @Nullable
     @Override
     public VirtualFile getFile() {
-        return xmlFile.getVirtualFile();
+        return psiFile.getVirtualFile();
     }
 
 }

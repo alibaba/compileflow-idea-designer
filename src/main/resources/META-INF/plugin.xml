@@ -22,12 +22,12 @@
     <depends>com.intellij.modules.lang</depends>
     -->
 
-    <application-components>
-        <component>
-            <implementation-class>com.alibaba.compileflow.idea.plugin.component.AssociateFileTypeComponent
-            </implementation-class>
-        </component>
-    </application-components>
+    <!--<application-components>-->
+    <!--<component>-->
+    <!--<implementation-class>com.alibaba.compileflow.idea.plugin.component.AssociateFileTypeComponent-->
+    <!--</implementation-class>-->
+    <!--</component>-->
+    <!--</application-components>-->
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->

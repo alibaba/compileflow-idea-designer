@@ -29,7 +29,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
-import com.intellij.psi.xml.XmlFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -49,7 +48,7 @@ public class JavaSourceFileEditorProvider implements FileEditorProvider, DumbAwa
     @Override
     public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile virtualFile) {
         PsiFile psiFile = PsiManager.getInstance(project).findFile(virtualFile);
-        return new JavaSourceFileEditor(project, (XmlFile)psiFile);
+        return new JavaSourceFileEditor(project, psiFile);
     }
 
     @Override

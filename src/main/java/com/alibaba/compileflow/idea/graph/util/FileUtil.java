@@ -22,7 +22,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
-import com.intellij.psi.xml.XmlFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -48,12 +47,11 @@ public class FileUtil {
      */
     public static boolean acceptFile(@NotNull Project project, @NotNull VirtualFile virtualFile) {
         PsiFile psiFile = PsiManager.getInstance(project).findFile(virtualFile);
-        boolean accept = (psiFile instanceof XmlFile);
 
-        if (accept) {
+        if (null != psiFile) {
             return psiFile.getName().indexOf(".bpm") > 0 || psiFile.getName().indexOf(".bpmn") > 0;
         }
-        return accept;
+        return false;
     }
 
     /**
