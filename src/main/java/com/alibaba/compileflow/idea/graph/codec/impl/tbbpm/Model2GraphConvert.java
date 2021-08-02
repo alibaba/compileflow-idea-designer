@@ -35,6 +35,7 @@ import com.alibaba.compileflow.idea.graph.model.StartNodeModel;
 import com.alibaba.compileflow.idea.graph.model.SubBpmNodeModel;
 import com.alibaba.compileflow.idea.graph.model.UserTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.WaitTaskNodeModel;
+import com.alibaba.compileflow.idea.graph.util.SettingsUtils;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
@@ -71,7 +72,8 @@ public class Model2GraphConvert {
         graph.getModel().beginUpdate();
         try {
             doDraw(bpmModel.getAllNodes(), parent);
-            mxIGraphLayout layout = createLayout("mxOrthogonalLayout");
+            //mxIGraphLayout layout = createLayout("mxOrthogonalLayout");
+            mxIGraphLayout layout = createLayout(SettingsUtils.getLayout());
             layout.execute(parent);
         } catch (Exception e) {
             logger.error("error=====", e);
@@ -83,24 +85,22 @@ public class Model2GraphConvert {
     private mxIGraphLayout createLayout(String ident) {
         mxIGraphLayout layout = null;
         if (ident != null) {
-            if ("verticalHierarchical".equals(ident)) {
+            if ("HierarchicalLayout".equals(ident)) {
                 layout = new mxHierarchicalLayout(graph);
-            } else if ("mxOrthogonalLayout".equals(ident)) {
+            } else if ("OrthogonalLayout".equals(ident)) {
                 layout = new mxOrthogonalLayout(graph);
-            } else if ("horizontalHierarchical".equals(ident)) {
-                layout = new mxHierarchicalLayout(graph, JLabel.WEST);
-            } else if ("verticalTree".equals(ident)) {
+            } else if ("CompactTreeLayout".equals(ident)) {
                 layout = new mxCompactTreeLayout(graph, false);
-            } else if ("horizontalTree".equals(ident)) {
-                layout = new mxCompactTreeLayout(graph, true);
-            } else if ("parallelEdges".equals(ident)) {
+            } else if ("ParallelEdgeLayout".equals(ident)) {
                 layout = new mxParallelEdgeLayout(graph);
-            } else if ("placeEdgeLabels".equals(ident)) {
+            } else if ("EdgeLabelLayout".equals(ident)) {
                 layout = new mxEdgeLabelLayout(graph);
-            } else if ("organicLayout".equals(ident)) {
+            } else if ("OrganicLayout".equals(ident)) {
                 layout = new mxOrganicLayout(graph);
-            } else if ("circleLayout".equals(ident)) {
+            } else if ("CircleLayout".equals(ident)) {
                 layout = new mxCircleLayout(graph);
+            } else {
+                layout = new mxOrthogonalLayout(graph);
             }
         }
         return layout;

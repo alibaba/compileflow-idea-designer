@@ -26,23 +26,29 @@ public class SettingsUtils {
     private static final String PATH = System.getProperty("user.home") + File.separator + ".compileflow-idea-designer"
         + File.separator + "settings.properties";
 
+    //style
     private static final String STYLE_KEY = "style";
-    public static final String STYLE_VALUE_CLASSIC = "classic";
-    public static final String STYLE_VALUE_COLOR = "color";
+    public static final String STYLE_DEFAULT = "classic";
+
+    //layout
+    private static final String LAYOUT_KEY = "layout";
+    public static final String LAYOUT_DEFALUT = "OrthogonalLayout";
 
     public static void setStyle(String style) {
-        if (!STYLE_VALUE_CLASSIC.equals(style) && !STYLE_VALUE_COLOR.equals(style)) {
-            style = STYLE_VALUE_CLASSIC;
-        }
         LocalKvUtil.put(PATH, STYLE_KEY, style);
     }
 
     public static String getStyle() {
-        String style = LocalKvUtil.get(PATH, STYLE_KEY);
-        if (!STYLE_VALUE_CLASSIC.equals(style) && !STYLE_VALUE_COLOR.equals(style)) {
-            style = STYLE_VALUE_CLASSIC;
-        }
-        return style;
+        return LocalKvUtil.get(PATH, STYLE_KEY, STYLE_DEFAULT);
+
+    }
+
+    public static String getLayout() {
+        return LocalKvUtil.get(PATH, LAYOUT_KEY, LAYOUT_DEFALUT);
+    }
+
+    public static void setLayout(String layout) {
+        LocalKvUtil.put(PATH, LAYOUT_KEY, layout);
     }
 
 }

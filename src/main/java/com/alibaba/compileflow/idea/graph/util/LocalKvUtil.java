@@ -68,6 +68,14 @@ public class LocalKvUtil {
         return properties.getProperty(key);
     }
 
+    public static String get(String path, String key, String defaultStr) {
+        String value = get(path, key);
+        if (null != value) {
+            return value;
+        }
+        return defaultStr;
+    }
+
     public synchronized static void remove(String path, String key) {
         Properties properties = getPropertiesFromPath(path);
         if (null == properties) {

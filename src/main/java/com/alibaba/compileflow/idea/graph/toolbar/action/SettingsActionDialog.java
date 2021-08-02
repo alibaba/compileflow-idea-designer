@@ -20,6 +20,7 @@ import javax.swing.*;
 
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
 import com.alibaba.compileflow.idea.graph.styles.StyleSheetLoader;
+import com.alibaba.compileflow.idea.graph.util.DialogUtil;
 import com.alibaba.compileflow.idea.graph.util.SettingsUtils;
 
 import com.intellij.openapi.project.Project;
@@ -40,7 +41,14 @@ public class SettingsActionDialog extends DialogWrapper {
      */
     private JLabel styleTips = new JLabel("Choice the style");
     private ComboBox<String> styleCb = new ComboBox<>(
-        new String[] {SettingsUtils.STYLE_VALUE_CLASSIC, SettingsUtils.STYLE_VALUE_COLOR});
+        new String[] {"classic", "color"});
+    /**
+     * layout
+     */
+    private JLabel layoutTips = new JLabel("Choice the layout");
+    private ComboBox<String> layoutCb = new ComboBox<>(
+        new String[] {"HierarchicalLayout", "OrthogonalLayout", "CompactTreeLayout", "ParallelEdgeLayout",
+            "EdgeLabelLayout", "OrganicLayout", "CircleLayout"});
 
     public SettingsActionDialog(@Nullable Project project, Graph graph) {
         super(project);
@@ -58,6 +66,10 @@ public class SettingsActionDialog extends DialogWrapper {
         root.add(styleTips);
         styleCb.setSelectedItem(SettingsUtils.getStyle());
         root.add(styleCb);
+        //layout
+        root.add(layoutTips);
+        layoutCb.setSelectedItem(SettingsUtils.getLayout());
+        root.add(layoutCb);
         return root;
     }
 
@@ -67,7 +79,17 @@ public class SettingsActionDialog extends DialogWrapper {
         //style
         Object styleSelectItem = styleCb.getSelectedItem();
         SettingsUtils.setStyle(
-            null != styleSelectItem ? styleSelectItem.toString() : SettingsUtils.STYLE_VALUE_CLASSIC);
+            null != styleSelectItem ? styleSelectItem.toString() : SettingsUtils.STYLE_DEFAULT);
+        //layout
+        Object layoutSelectItem = layoutCb.getSelectedItem();
+        String layoutSelectItemStr = null != layoutSelectItem ? layoutSelectItem.toString()
+            : SettingsUtils.LAYOUT_DEFALUT;
+        if (!SettingsUtils.getLayout().equals(layoutSelectItemStr)) {
+            DialogUtil.alert("Please reopen the file");
+        }
+        SettingsUtils.setLayout(
+            null != layoutSelectItem ? layoutSelectItem.toString() : SettingsUtils.LAYOUT_DEFALUT);
+        //
         graph.setStylesheet(new StyleSheetLoader().load());
         graph.refresh();
     }
