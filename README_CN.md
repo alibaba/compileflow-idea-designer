@@ -108,6 +108,8 @@ https://github.com/compileflow/compileflow-designer-upgrade
         * 优化javacode的展示
 * bugfix：1.0.10（2021.7.28）by xuan
         * 支持2021.2版本安装
+* 新特性：1.0.11（2021.8.25）by xuan
+        * 支持布局切换
 
       
       
