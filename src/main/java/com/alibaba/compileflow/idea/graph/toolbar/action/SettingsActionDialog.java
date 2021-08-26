@@ -16,6 +16,8 @@
  */
 package com.alibaba.compileflow.idea.graph.toolbar.action;
 
+import java.awt.*;
+
 import javax.swing.*;
 
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
@@ -37,14 +39,22 @@ public class SettingsActionDialog extends DialogWrapper {
     private Graph graph;
 
     /**
+     * layout
+     */
+    private JPanel root = new JPanel();
+    private BoxLayout boxLayout = new BoxLayout(root, BoxLayout.Y_AXIS);
+
+    /**
      * style
      */
+    private JPanel line1 = new JPanel(new FlowLayout());
     private JLabel styleTips = new JLabel("Choice the style");
     private ComboBox<String> styleCb = new ComboBox<>(
         new String[] {"classic", "color"});
     /**
      * layout
      */
+    private JPanel line2 = new JPanel(new FlowLayout());
     private JLabel layoutTips = new JLabel("Choice the layout");
     private ComboBox<String> layoutCb = new ComboBox<>(
         new String[] {"HierarchicalLayout", "OrthogonalLayout", "CompactTreeLayout", "ParallelEdgeLayout",
@@ -61,15 +71,18 @@ public class SettingsActionDialog extends DialogWrapper {
     @Nullable
     @Override
     protected JComponent createCenterPanel() {
-        JPanel root = new JPanel();
+        root.setLayout(boxLayout);
         //style
-        root.add(styleTips);
+        line1.add(styleTips);
+        line1.add(styleCb);
+        root.add(line1);
         styleCb.setSelectedItem(SettingsUtils.getStyle());
-        root.add(styleCb);
+
         //layout
-        root.add(layoutTips);
+        line2.add(layoutTips);
+        line2.add(layoutCb);
+        root.add(line2);
         layoutCb.setSelectedItem(SettingsUtils.getLayout());
-        root.add(layoutCb);
         return root;
     }
 
