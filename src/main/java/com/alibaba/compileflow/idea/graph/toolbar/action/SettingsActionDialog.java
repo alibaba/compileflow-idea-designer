@@ -50,7 +50,7 @@ public class SettingsActionDialog extends DialogWrapper {
     private JPanel line1 = new JPanel(new FlowLayout());
     private JLabel styleTips = new JLabel("Choice the style");
     private ComboBox<String> styleCb = new ComboBox<>(
-        new String[] {"classic", "color"});
+        new String[] {"classic", "color", "color2"});
     /**
      * layout
      */
