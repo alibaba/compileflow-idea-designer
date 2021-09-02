@@ -21,7 +21,7 @@ public class Lang {
 
     private static final Map<String, Map<String, String>> LANG_MAP = new HashMap<>();
 
-    private static String CURRENT_LANG = LANG_KEY_EN;
+    private static String CURRENT_LANG = LANG_KEY_ZH_CN;
 
     static {
         loadLang();

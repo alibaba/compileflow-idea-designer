@@ -139,8 +139,9 @@ public class Graph2ModelConvert {
         nodeList.forEach((node -> {
             if (node instanceof LoopProcessNodeModel) {
                 List<BaseNodeModel> subList = new ArrayList<>();
-                String startNodeId = ((LoopProcessNodeModel)node).getStartNodeId();
-                fetchSubList(subList, needDeleteNodeIdSet, id2NodeMap, startNodeId);
+                LoopProcessNodeModel loopNode = ((LoopProcessNodeModel)node);
+                String startNodeId = loopNode.getStartNodeId();
+                fetchSubList(subList, needDeleteNodeIdSet, id2NodeMap, startNodeId, loopNode);
                 ((LoopProcessNodeModel)node).setAllNodes(subList);
             }
         }));
@@ -148,24 +149,25 @@ public class Graph2ModelConvert {
     }
 
     private void fetchSubList(List<BaseNodeModel> subList, Set<String> needDeleteNodeIdSet,
-        Map<String, BaseNodeModel> id2NodeMap, String nodeId) {
+        Map<String, BaseNodeModel> id2NodeMap, String subNodeId, LoopProcessNodeModel loopNode) {
 
-        if (StringUtil.isEmpty(nodeId)) {
+        if (StringUtil.isEmpty(subNodeId)) {
             return;
         }
 
-        BaseNodeModel baseNodeModel = id2NodeMap.get(nodeId);
-        if (null == baseNodeModel) {
+        BaseNodeModel subNode = id2NodeMap.get(subNodeId);
+        if (null == subNode) {
             return;
         }
 
-        subList.add(baseNodeModel);
-        needDeleteNodeIdSet.add(baseNodeModel.getId());
+        subList.add(subNode);
+        needDeleteNodeIdSet.add(subNode.getId());
+        loopNode.setEndNodeId(subNode.getId());
 
-        List<TransitionModel> transitionList = baseNodeModel.getOutTransitions();
+        List<TransitionModel> transitionList = subNode.getOutTransitions();
         if (null != transitionList) {
             transitionList.forEach(transitionModel -> {
-                fetchSubList(subList, needDeleteNodeIdSet, id2NodeMap, transitionModel.getTo());
+                fetchSubList(subList, needDeleteNodeIdSet, id2NodeMap, transitionModel.getTo(), loopNode);
             });
         }
     }

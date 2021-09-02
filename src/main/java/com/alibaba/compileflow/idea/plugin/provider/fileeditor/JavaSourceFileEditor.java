@@ -140,7 +140,7 @@ public class JavaSourceFileEditor extends UserDataHolderBase implements FileEdit
     @NotNull
     @Override
     public String getName() {
-        return Lang.getString("editor.java.code");
+        return "JavaCode";
     }
 
     @NotNull

@@ -87,7 +87,7 @@ public class FlowChartFileEditor extends UserDataHolderBase implements FileEdito
     @NotNull
     @Override
     public String getName() {
-        return Lang.getString("editor.process.flow");
+        return "ProcessFlow";
     }
 
     @Override
