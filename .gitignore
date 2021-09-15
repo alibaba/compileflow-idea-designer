@@ -42,7 +42,7 @@ gradle-app.setting
 !/libs/rsyntaxtextarea-3.1.1-javadoc.jar
 !/libs/rsyntaxtextarea-3.1.1-sources.jar
 !/libs/tbbpm-jar-with-dependencies.jar
-!/libs/compileflow-1.0.0-jar-with-dependencies.jar
+!/libs/compileflow-1.2.0-SNAPSHOT-jar-with-dependencies.jar
 !/libs/logback-classic-1.1.8.jar
 !/libs/logback-core-1.1.8.jar
 *.war
