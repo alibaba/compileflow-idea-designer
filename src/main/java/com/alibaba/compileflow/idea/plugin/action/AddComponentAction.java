@@ -16,12 +16,9 @@
  */
 package com.alibaba.compileflow.idea.plugin.action;
 
-import com.alibaba.compileflow.idea.CompileFlow;
 import com.alibaba.compileflow.idea.graph.util.FileUtil;
-
 import com.alibaba.compileflow.idea.graph.util.ImageIconUtil;
 import com.alibaba.compileflow.idea.plugin.provider.fileeditor.BpmFileType;
-
 import com.intellij.CommonBundle;
 import com.intellij.ide.actions.CreateElementActionBase;
 import com.intellij.openapi.actionSystem.AnActionEvent;
