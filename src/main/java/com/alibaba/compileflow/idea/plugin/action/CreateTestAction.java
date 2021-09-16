@@ -79,7 +79,9 @@ public class CreateTestAction extends AnAction {
         if (null == moduleFile) {
             return;
         }
-        String testDirStr = moduleFile.getParent().getPath() + "/src/test/java/" + packagesAndClassName[0];
+//        String testDirStr = moduleFile.getParent().getPath() + "/src/test/java/" + packagesAndClassName[0];
+        String testDirStr = project.getBasePath()  + "/src/test/java/" + packagesAndClassName[0];
+        // testFile的文件路径
         File testFile = new File(testDirStr + packagesAndClassName[1]);
         DialogUtil.prompt(LanguageConstants.CREATE_TEST_CLASS_MESSAGE, testFile.getPath(), (url) -> {
             File realTestFile = new File(url);

@@ -179,6 +179,7 @@ public class FileUtil {
 
             os = new FileOutputStream(file);
             os.write(content.getBytes(CHARSET));
+            os.flush();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
