@@ -79,8 +79,17 @@ public class CreateTestAction extends AnAction {
         if (null == moduleFile) {
             return;
         }
-//        String testDirStr = moduleFile.getParent().getPath() + "/src/test/java/" + packagesAndClassName[0];
-        String testDirStr = project.getBasePath()  + "/src/test/java/" + packagesAndClassName[0];
+
+        String moduleFilePath = module.getModuleFilePath();
+        String localBasePath = null;
+        // 单module, 当前的处理方式比较简陋
+        if (moduleFilePath.indexOf(".idea") > 0) {
+            localBasePath = project.getBasePath();
+        } else { // 多module
+            localBasePath = moduleFilePath.substring(0, moduleFilePath.indexOf(module.getName()+".iml"));
+        }
+
+        String testDirStr = localBasePath + "/src/test/java/" + packagesAndClassName[0];
         // testFile的文件路径
         File testFile = new File(testDirStr + packagesAndClassName[1]);
         DialogUtil.prompt(LanguageConstants.CREATE_TEST_CLASS_MESSAGE, testFile.getPath(), (url) -> {
