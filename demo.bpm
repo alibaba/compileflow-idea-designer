@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bpm code="demo" name="test" type="process" description="This is test demo.">
+  <var name="num" description="入参" dataType="java.lang.Double" inOutType="param"/>
+  <var name="numSqrt" description="开根号结果" dataType="java.lang.Double" inOutType="return"/>
+  <start id="1" name="开始" g="115,16,30,30">
+    <transition g=":-15,20" to="17"/>
+  </start>
+  <end id="11" name="结束" g="115,411,30,30"/>
+  <autoTask id="17" name="计算平方根" g="424,249,88,48">
+    <transition g=":-15,20" to="11"/>
+    <action type="java">
+      <actionHandle clazz="java.lang.Math" method="sqrt">
+        <var name="input" dataType="double" contextVarName="num" inOutType="param"/>
+        <var name="output" dataType="double" contextVarName="numSqrt" inOutType="return"/>
+      </actionHandle>
+    </action>
+  </autoTask>
+</bpm>

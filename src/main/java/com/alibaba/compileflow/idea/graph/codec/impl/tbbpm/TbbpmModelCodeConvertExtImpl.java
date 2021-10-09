@@ -21,17 +21,17 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.alibaba.compileflow.engine.FlowModel;
+import com.alibaba.compileflow.engine.ProcessEngineFactory;
 import com.alibaba.compileflow.engine.common.CompileFlowException;
 import com.alibaba.compileflow.engine.common.DirectedGraph;
 import com.alibaba.compileflow.engine.definition.common.EndElement;
-import com.alibaba.compileflow.engine.definition.common.FlowModel;
 import com.alibaba.compileflow.engine.definition.common.TransitionNode;
 import com.alibaba.compileflow.engine.definition.common.TransitionSupport;
 import com.alibaba.compileflow.engine.definition.tbbpm.TbbpmModel;
 import com.alibaba.compileflow.engine.process.preruntime.converter.impl.TbbpmModelConverter;
 import com.alibaba.compileflow.engine.runtime.impl.AbstractProcessRuntime;
-import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatefulProcessRuntime;
-import com.alibaba.compileflow.engine.runtime.impl.TbbpmStatelessProcessRuntime;
+import com.alibaba.compileflow.engine.runtime.impl.TbbpmProcessRuntime;
 import com.alibaba.compileflow.idea.graph.codec.ModelCodeConvertExt;
 import com.alibaba.compileflow.idea.graph.model.BpmModel;
 
@@ -44,11 +44,13 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
     @Override
     public String getJavaTestCode(BpmModel bpmModel, String xml) {
         return buildProcessRuntime(bpmModel, xml).generateTestCode();
+        //return ProcessEngineFactory.getProcessEngine().getTestCode(xml);
     }
 
     @Override
     public String getJavaCode(BpmModel bpmModel, String xml) {
         return buildProcessRuntime(bpmModel, xml).generateJavaCode();
+        //return ProcessEngineFactory.getProcessEngine().getJavaCode(xml);
     }
 
     private AbstractProcessRuntime<TbbpmModel> buildProcessRuntime(BpmModel bpmModel, String xml) {
@@ -60,12 +62,7 @@ public class TbbpmModelCodeConvertExtImpl implements ModelCodeConvertExt {
         checkContinuous(tbbpmModel);
         sortTransition(tbbpmModel);
 
-        AbstractProcessRuntime<TbbpmModel> processRuntime;
-        if (BpmModel.BPM_DEFINE_STATEFULL.equals(bpmModel.getType())) {
-            processRuntime = TbbpmStatefulProcessRuntime.of(tbbpmModel);
-        } else {
-            processRuntime = TbbpmStatelessProcessRuntime.of(tbbpmModel);
-        }
+        AbstractProcessRuntime<TbbpmModel> processRuntime = TbbpmProcessRuntime.of(tbbpmModel);
 
         processRuntime.init();
         return processRuntime;

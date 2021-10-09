@@ -112,6 +112,8 @@ https://github.com/compileflow/compileflow-designer-upgrade
         * 支持布局切换
 * bugfix：1.0.12（2021.8.30）by xuan
         * 修复一些常规性bug
+* bugfix：1.0.13（2021.10.9）by xuan
+        * 优化一些内部逻辑
 
       
       
