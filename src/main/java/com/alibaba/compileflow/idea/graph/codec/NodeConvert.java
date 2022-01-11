@@ -33,7 +33,7 @@ import com.alibaba.compileflow.engine.definition.tbbpm.ScriptTaskNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.StartNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.SubBpmNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.Transition;
-import com.alibaba.compileflow.engine.definition.tbbpm.WaitEventNode;
+import com.alibaba.compileflow.engine.definition.tbbpm.WaitEventTaskNode;
 import com.alibaba.compileflow.engine.definition.tbbpm.WaitTaskNode;
 import com.alibaba.compileflow.idea.graph.model.AutoTaskNodeModel;
 import com.alibaba.compileflow.idea.graph.model.BaseNodeModel;
@@ -168,9 +168,10 @@ public class NodeConvert {
             return breakNode;
         } else if (model instanceof WaitEventModel) {
             WaitEventModel waitEventModel = (WaitEventModel)model;
-            WaitEventNode waitEventNode = new WaitEventNode();
+            WaitEventTaskNode waitEventNode = new WaitEventTaskNode();
             fillToNode(waitEventNode, waitEventModel);
             waitEventNode.setEventName(waitEventModel.getEventName());
+            waitEventNode.setInAction(ActionConvert.toAction(waitEventModel.getInAction()));
             return waitEventNode;
         }
 
@@ -277,11 +278,12 @@ public class NodeConvert {
             fillToModel(model, breakNode);
             model.setExpression(breakNode.getExpression());
             return model;
-        } else if (node instanceof WaitEventNode) {
-            WaitEventNode waitEventNode = (WaitEventNode)node;
+        } else if (node instanceof WaitEventTaskNode) {
+            WaitEventTaskNode waitEventNode = (WaitEventTaskNode)node;
             WaitEventModel model = WaitEventModel.of();
             fillToModel(model, waitEventNode);
             model.setEventName(waitEventNode.getEventName());
+            model.setInAction(ActionConvert.toModel(waitEventNode.getInAction()));
             return model;
         }
 

@@ -22,8 +22,10 @@ package com.alibaba.compileflow.idea.graph.model;
  */
 public class WaitEventModel extends BaseNodeModel {
 
+    private ActionModel inAction;
+
     private String eventName;
-    
+
     private WaitEventModel() {
     }
 
@@ -44,4 +46,13 @@ public class WaitEventModel extends BaseNodeModel {
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
+
+    public ActionModel getInAction() {
+        return inAction;
+    }
+
+    public void setInAction(ActionModel inAction) {
+        this.inAction = inAction;
+    }
+
 }

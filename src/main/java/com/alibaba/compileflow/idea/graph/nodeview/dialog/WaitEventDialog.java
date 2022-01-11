@@ -18,8 +18,10 @@ package com.alibaba.compileflow.idea.graph.nodeview.dialog;
 
 import javax.swing.*;
 
+import com.alibaba.compileflow.idea.graph.model.ActionModel;
 import com.alibaba.compileflow.idea.graph.model.WaitEventModel;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
+import com.alibaba.compileflow.idea.graph.nodeview.component.ActionPanel;
 import com.alibaba.compileflow.idea.graph.nodeview.component.WaitEventPanel;
 import com.alibaba.compileflow.idea.graph.util.StringUtil;
 
@@ -33,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
  * @author xuan
  * @since 2019/3/21
  */
-public class WaitEventDialog extends BaseDialog {
+public class WaitEventDialog extends BaseMultiTabDialog {
 
     public WaitEventDialog(@Nullable Project project, mxCell cell, Graph graph) {
         super(project, cell, graph);
@@ -41,35 +43,58 @@ public class WaitEventDialog extends BaseDialog {
 
     @Override
     protected String getDialogTitle() {
-        return "WaitEvent setting";
-    }
-
-    @Override
-    protected JPanel getParamPanel(Project project, Graph graph, mxCell cell) {
-        return new WaitEventPanel();
+        return "WaitEvent Setting";
     }
 
     @Override
     protected void initParamPanelView() {
-
+        ActionPanel.initContextVarNameComboBox(panels[1], graph);
+        ((ActionPanel)panels[1]).setJumpToSourceActionCallback((s) -> {
+            doCancelAction();
+            return null;
+        });
     }
 
     @Override
     protected void initParamPanelData() {
-        WaitEventPanel waitEventPanel = (WaitEventPanel)paramPanel;
 
         WaitEventModel waitEventModel = WaitEventModel.getFromCellValue(cell.getValue());
 
+        //EventName
+        WaitEventPanel waitEventPanel = (WaitEventPanel)panels[0];
         waitEventPanel.getEventNameField().setText(StringUtil.trimToEmpty(waitEventModel.getEventName()));
+
+        //inAction
+        ActionPanel.data2View(panels[1], waitEventModel.getInAction());
     }
 
     @Override
     protected void doParamSave() {
-        WaitEventPanel waitEventPanel = (WaitEventPanel)paramPanel;
-
         WaitEventModel waitEventModel = WaitEventModel.getFromCellValue(cell.getValue());
 
+        //EventName
+        WaitEventPanel waitEventPanel = (WaitEventPanel)panels[0];
         waitEventModel.setEventName(StringUtil.trimToEmpty(waitEventPanel.getEventNameField().getText()));
+
+        //inAction
+        ActionModel inAction = waitEventModel.getInAction();
+        if (null == inAction) {
+            inAction = ActionModel.of();
+            waitEventModel.setInAction(inAction);
+        }
+        ActionPanel.view2Data(panels[1], inAction);
+        waitEventModel.setInAction(ActionPanel.isActionSettingPanelEmpty(panels[1]) ? null : inAction);
+    }
+
+    @Override
+    protected JPanel[] getPanels() {
+        return new JPanel[] {
+            new WaitEventPanel(), new ActionPanel(project)};
+    }
+
+    @Override
+    protected String[] getTabNames() {
+        return new String[] {"EventName Setting", "PreAction Setting"};
     }
 
 }
