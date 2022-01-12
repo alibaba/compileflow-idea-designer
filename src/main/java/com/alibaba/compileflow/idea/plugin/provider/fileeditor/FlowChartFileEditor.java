@@ -16,14 +16,11 @@
  */
 package com.alibaba.compileflow.idea.plugin.provider.fileeditor;
 
-import com.alibaba.compileflow.idea.plugin.LanguageConstants;
 import com.alibaba.compileflow.idea.graph.FlowChartComponent;
-import com.alibaba.compileflow.idea.graph.mxgraph.GraphComponent;
 import com.alibaba.compileflow.idea.graph.mxgraph.Graph;
+import com.alibaba.compileflow.idea.graph.mxgraph.GraphComponent;
 import com.alibaba.compileflow.idea.graph.mxgraph.GraphModel;
 import com.alibaba.compileflow.idea.graph.styles.StyleSheetLoader;
-import com.alibaba.compileflow.idea.plugin.lang.Lang;
-
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
@@ -39,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-
 import java.beans.PropertyChangeListener;
 
 /**
@@ -51,10 +47,11 @@ import java.beans.PropertyChangeListener;
 public class FlowChartFileEditor extends UserDataHolderBase implements FileEditor {
 
     private final FlowChartComponent flowChartComponent;
+    private final VirtualFile vf;
 
     public FlowChartFileEditor(@NotNull Project project, @NotNull VirtualFile file) {
 
-        VirtualFile vf = file instanceof LightVirtualFile ? ((LightVirtualFile)file).getOriginalFile() : file;
+        vf = file instanceof LightVirtualFile ? ((LightVirtualFile)file).getOriginalFile() : file;
 
         Module module = ModuleUtil.findModuleForFile(vf, project);
         mxStylesheet stylesheet = new StyleSheetLoader().load();
@@ -128,6 +125,9 @@ public class FlowChartFileEditor extends UserDataHolderBase implements FileEdito
     public void removePropertyChangeListener(@NotNull PropertyChangeListener propertyChangeListener) {
 
     }
+
+    @Nullable
+    public VirtualFile getFile() { return vf; }
 
     @Nullable
     @Override
