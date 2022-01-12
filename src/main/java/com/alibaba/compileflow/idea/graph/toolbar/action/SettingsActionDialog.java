@@ -36,27 +36,27 @@ import org.jetbrains.annotations.Nullable;
  */
 public class SettingsActionDialog extends DialogWrapper {
 
-    private Graph graph;
+    private final Graph graph;
 
     /**
      * layout
      */
-    private JPanel root = new JPanel();
-    private BoxLayout boxLayout = new BoxLayout(root, BoxLayout.Y_AXIS);
+    private final JPanel root = new JPanel();
+    private final BoxLayout boxLayout = new BoxLayout(root, BoxLayout.Y_AXIS);
 
     /**
      * style
      */
-    private JPanel line1 = new JPanel(new FlowLayout());
-    private JLabel styleTips = new JLabel("Choice the style");
-    private ComboBox<String> styleCb = new ComboBox<>(
-        new String[] {"classic", "color", "color2"});
+    private final JPanel line1 = new JPanel(new FlowLayout());
+    private final JLabel styleTips = new JLabel("Choice the style");
+    private final ComboBox<String> styleCb = new ComboBox<>(
+        new String[] {"color2", "classic", "color"});
     /**
      * layout
      */
-    private JPanel line2 = new JPanel(new FlowLayout());
-    private JLabel layoutTips = new JLabel("Choice the layout");
-    private ComboBox<String> layoutCb = new ComboBox<>(
+    private final JPanel line2 = new JPanel(new FlowLayout());
+    private final JLabel layoutTips = new JLabel("Choice the layout");
+    private final ComboBox<String> layoutCb = new ComboBox<>(
         new String[] {"HierarchicalLayout", "OrthogonalLayout", "CompactTreeLayout", "ParallelEdgeLayout",
             "EdgeLabelLayout", "OrganicLayout", "CircleLayout"});
 
