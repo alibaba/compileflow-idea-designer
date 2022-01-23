@@ -114,6 +114,9 @@ https://github.com/compileflow/compileflow-designer-upgrade
         * 修复一些常规性bug
 * bugfix：1.0.13（2021.10.9）by xuan
         * 优化一些内部逻辑
+* 新特性：1.0.14 （2022.1.23）by xuan
+        * WaitEvent时间支持前置Action  <br>
+        * 2021.3的idea支持  <br>
 
       
       

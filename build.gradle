@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.13'
+version '1.0.14'
 
 sourceCompatibility = 1.8
 
@@ -18,9 +18,9 @@ repositories {
     maven {
         url "https://oss.sonatype.org/content/repositories/snapshots/"
     }
-    maven {
-        url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
-    }
+//    maven {
+//        url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
+//    }
 }
 
 sourceSets.main.resources {
@@ -50,9 +50,9 @@ allprojects {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    //version '2018.2'
-    version '2020.1'
-    plugins = ['java']
+    version '2018.2'
+//    version '2021.3'
+//    plugins = ['java']
 }
 patchPluginXml {
     changeNotes """
@@ -100,6 +100,10 @@ patchPluginXml {
       
       <em>1.0.13 逻辑优化</em><br>
       1. 优化了一些逻辑  <br>
+      
+      <em>1.0.14 features</em><br>
+      1. WaitEvent时间支持前置Action  <br>
+      2. 2021.3的idea支持  <br>
       
       """
 
