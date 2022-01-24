@@ -127,6 +127,7 @@ public class FlowChartFileEditor extends UserDataHolderBase implements FileEdito
     }
 
     @Nullable
+    @Override
     public VirtualFile getFile() { return vf; }
 
     @Nullable
