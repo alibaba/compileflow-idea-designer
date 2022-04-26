@@ -6,9 +6,9 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.14'
+version '1.0.15'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 11
 
 repositories {
     flatDir {
@@ -108,5 +108,5 @@ patchPluginXml {
       """
 
     sinceBuild '162.*'
-    untilBuild '213.*'
+    untilBuild '222.*'
 }
