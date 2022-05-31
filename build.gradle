@@ -1,12 +1,12 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.7'
-    id "org.jetbrains.kotlin.jvm" version '1.2.70'
+    id 'org.jetbrains.intellij' version '1.6.0'
+//    id "org.jetbrains.kotlin.jvm" version '1.2.70'
 }
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.14'
+version '1.0.15'
 
 sourceCompatibility = 1.8
 
@@ -31,31 +31,31 @@ sourceSets.main.resources {
     include '**/*.gif'
 }
 
-ext.kotlin_version = '1.2.71'
+//ext.kotlin_version = '1.2.71'
 
 allprojects {
 
     dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
         compile name: 'miglayout-core-5.3-SNAPSHOT'
         compile name: 'miglayout-swing-5.3-SNAPSHOT'
         compile name: 'mxgraph-all'
         compile name: 'compileflow-1.2.0-SNAPSHOT-jar-with-dependencies'
         compile name: 'logback-core-1.1.8'
         compile name: 'logback-classic-1.1.8'
-        testCompile group: 'junit', name: 'junit', version: '4.12'
-        testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+//        testCompile group: 'junit', name: 'junit', version: '4.12'
+//        testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     }
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
 //    version '2018.2'
-    version '2021.3'
+    version = '2022.1'
     plugins = ['java']
 }
 patchPluginXml {
-    changeNotes """
+    changeNotes = """
       <em>1.0.0 首发版本</em><br>
       1. 首发版本 <br>
       
@@ -105,8 +105,11 @@ patchPluginXml {
       1. WaitEvent时间支持前置Action  <br>
       2. 2021.3的idea支持  <br>
       
+      <em>1.0.15 bugfix</em><br>
+      1. 2022.1的idea支持  <br>
+      
       """
 
-    sinceBuild '162.*'
-    untilBuild '213.*'
+    sinceBuild = '162.*'
+    untilBuild = '222.*'
 }

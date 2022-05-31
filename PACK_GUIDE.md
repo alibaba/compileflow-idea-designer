@@ -18,10 +18,3 @@ intellij {
     version '2020.1'
     plugins = ['java']
 }
-
-## 2021.1及以上打包
-1. 修改build.gradle的intellij配置为：
-intellij {
-    version '2020.1'
-    plugins = ['java']
-}
