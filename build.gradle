@@ -1,26 +1,19 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '1.6.0'
-//    id "org.jetbrains.kotlin.jvm" version '1.2.70'
+    id 'org.jetbrains.intellij' version '1.12.0'
 }
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.15'
+version '1.0.16'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 17
 
 repositories {
     flatDir {
         dirs 'libs'
     }
     mavenCentral()
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots/"
-    }
-//    maven {
-//        url 'http://dl.bintray.com/jetbrains/intellij-plugin-service'
-//    }
 }
 
 sourceSets.main.resources {
@@ -31,27 +24,22 @@ sourceSets.main.resources {
     include '**/*.gif'
 }
 
-//ext.kotlin_version = '1.2.71'
 
 allprojects {
 
     dependencies {
-//        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-        compile name: 'miglayout-core-5.3-SNAPSHOT'
-        compile name: 'miglayout-swing-5.3-SNAPSHOT'
-        compile name: 'mxgraph-all'
-        compile name: 'compileflow-1.2.0-SNAPSHOT-jar-with-dependencies'
-        compile name: 'logback-core-1.1.8'
-        compile name: 'logback-classic-1.1.8'
-//        testCompile group: 'junit', name: 'junit', version: '4.12'
-//        testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+        implementation 'com.miglayout:miglayout-core:5.3'
+        implementation 'com.miglayout:miglayout-swing:5.3'
+        implementation 'com.mxgraph:mxgraph-all:3.9.3'
+        implementation 'com.alibaba.compileflow:compileflow:1.2.0'
+        implementation 'ch.qos.logback:logback-core:1.1.8'
+        implementation 'ch.qos.logback:logback-classic:1.1.8'
     }
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-//    version '2018.2'
-    version = '2022.1'
+    version = '2022.3'
     plugins = ['java']
 }
 patchPluginXml {
@@ -108,8 +96,9 @@ patchPluginXml {
       <em>1.0.15 bugfix</em><br>
       1. 2022.1的idea支持  <br>
       
+      <em>1.0.16 bugfix</em><br>
+      1. 2022.3的idea支持  <br>
       """
 
-    sinceBuild = '162.*'
-    untilBuild = '222.*'
+    sinceBuild = '223'
 }
