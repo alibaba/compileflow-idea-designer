@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.alibaba.compileflow.designer</id>
     <name>compileflow idea设计器</name>
-    <version>1.0.16</version>
+    <version>1.0.18</version>
     <vendor email="xuan.xa@alibaba-inc.com" url="https://github.com/alibaba/compileflow-idea-designer">阿里巴巴</vendor>
 
     <description><![CDATA[

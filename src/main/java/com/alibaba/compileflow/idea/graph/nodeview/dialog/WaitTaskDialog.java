@@ -60,11 +60,11 @@ public class WaitTaskDialog extends BaseMultiTabDialog {
         ActionPanel.initContextVarNameComboBox(panels[0], graph);
         ActionPanel.initContextVarNameComboBox(panels[1], graph);
 
-        ((ActionPanel)panels[1]).setJumpToSourceActionCallback((s) -> {
+        ((ActionPanel)panels[0]).setJumpToSourceActionCallback((s) -> {
             doCancelAction();
             return null;
         });
-        ((ActionPanel)panels[2]).setJumpToSourceActionCallback((s) -> {
+        ((ActionPanel)panels[1]).setJumpToSourceActionCallback((s) -> {
             doCancelAction();
             return null;
         });

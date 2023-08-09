@@ -129,7 +129,7 @@ public class NodeTemplateFactory {
         wait.height = 50;
         wait.value = WaitTaskNodeModel.of();
         ((WaitTaskNodeModel)wait.value).setName(wait.name);
-        //BPM_TEMPLATE_LIST.add(wait);
+        BPM_TEMPLATE_LIST.add(wait);
         //note
         Template note = new Template();
         note.name = Lang.getString("node.name.note");
