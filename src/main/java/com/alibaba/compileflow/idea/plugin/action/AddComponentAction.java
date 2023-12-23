@@ -46,7 +46,7 @@ public class AddComponentAction extends CreateElementActionBase {
 
     @Override
     protected String getActionName(PsiDirectory directory, String newName) {
-        return null;
+        return "CompileflowFile";
     }
 
     protected String getDialogPrompt() {

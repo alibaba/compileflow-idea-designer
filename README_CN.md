@@ -122,6 +122,10 @@ https://github.com/compileflow/compileflow-designer-upgrade
 * bugfix：1.0.16 （2023.2.15）by xuan（感谢：chenqiyue分支PR的支持）
     * 2022.3的idea支持  <br>
     * 修复一些BUG  <br>
+* bugfix：1.0.17 （2023.12.23）by accidia
+    * 2023.3的idea支持  <br>
+    * 修复创建bpm文件错误的bug  <br>
+    * 修复创建单元测试类错误的bug  <br>
 
       
       

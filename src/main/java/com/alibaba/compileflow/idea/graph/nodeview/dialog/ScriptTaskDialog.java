@@ -28,7 +28,7 @@ import com.alibaba.compileflow.idea.graph.model.ScriptTaskNodeModel;
 
 import com.intellij.openapi.project.Project;
 import com.mxgraph.model.mxCell;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
