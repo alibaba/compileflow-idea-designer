@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.16'
+version '1.0.17'
 
 sourceCompatibility = 1.8
 
@@ -37,6 +37,7 @@ allprojects {
 
     dependencies {
         implementation fileTree(dir: 'libs', includes: ['*.jar'])
+        implementation group: 'com.alibaba.compileflow', name: 'compileflow', version: '1.2.0'
 //        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 //        compile name: 'miglayout-core-5.3-SNAPSHOT'
 //        compile name: 'miglayout-swing-5.3-SNAPSHOT'
@@ -53,7 +54,7 @@ allprojects {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
 //    version '2018.2'
-    version = '2022.3'
+    version = '2023.3'
     plugins = ['java']
 }
 patchPluginXml {
@@ -114,8 +115,13 @@ patchPluginXml {
       1. 2022.3的idea支持  <br>
       2. 修复部分bug  <br>
       
+      <em>1.0.17 bugfix </em><br>
+      1. 2023.3的idea支持  <br>
+      2. 修复创建bpm文件错误的bug  <br>
+      3. 修复创建单元测试类错误的bug  <br>
+      
       """
 
     sinceBuild = '162.*'
-    untilBuild = '223.*'
+    untilBuild = '233.*'
 }

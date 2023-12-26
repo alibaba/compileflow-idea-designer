@@ -50,3 +50,4 @@ gradle-app.setting
 *.ear
 *.tar.gz
 *.rar
+.flowclasses/
