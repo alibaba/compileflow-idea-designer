@@ -6,7 +6,7 @@ plugins {
 
 
 group 'com.alibaba.compileflow.designer'
-version '1.0.16'
+version '1.0.17'
 
 sourceCompatibility = 1.8
 
@@ -51,9 +51,11 @@ allprojects {
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
+// See https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html#intellij-platform-based-products-of-recent-ide-versions
 intellij {
 //    version '2018.2'
-    version = '2022.3'
+//    version = '2022.3'
+    version = '2024.3'
     plugins = ['java']
 }
 patchPluginXml {
@@ -114,8 +116,12 @@ patchPluginXml {
       1. 2022.3的idea支持  <br>
       2. 修复部分bug  <br>
       
+      <em>1.0.17 bugfix（感谢landuo的PR分支支持）</em><br>
+      1. 2024.3的idea支持  <br>
+      2. 修复部分bug  <br>
+      
       """
 
     sinceBuild = '162.*'
-    untilBuild = '223.*'
+    untilBuild = '999.*'
 }
